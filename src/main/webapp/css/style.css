@@ -1,4 +1,5 @@
-@font-face { 
+/*
+@font-face {
     font-family: Droid Sans; 
     src: url('../fonts/DroidSans-webfont.eot'); 
     src: local("Droid Sans"), url('../fonts/DroidSans-webfont.woff'); 
@@ -19,7 +20,7 @@ html {
     padding: 0;
 }
 
-/* tell the browser to render HTML 5 elements as block */
+/!* tell the browser to render HTML 5 elements as block *!/
 article, aside, figure, footer, header, hgroup, nav, section { 
     display:block;
 }
@@ -135,7 +136,7 @@ ol li {
 }
 
 #main {
-    /* background: #EEEEEE url(../images/dark.png); */
+    /!* background: #EEEEEE url(../images/dark.png); *!/
 }
 
 
@@ -155,9 +156,9 @@ header {
 #Ezee-Pay-logo #Ezee-Pay-logo_text { 
     width: 168px;
     height: 135px;
-   /* border-radius: 7px;
+   /!* border-radius: 7px;
     -moz-border-radius: 7px;
-    -webkit-border: 7px; */
+    -webkit-border: 7px; *!/
     background: transparent url(../images/Ezee-Pay-logo.png) no-repeat;
     left: 0;
     padding: 20px 20px 20px 20px;
@@ -195,7 +196,7 @@ nav {
     height: 44px;
     margin: -44px auto 0 auto;
     color: #fef4e9;
- /*   background: transparent url(../images/menubar.png);*/
+ /!*   background: transparent url(../images/menubar.png);*!/
 } 
 
 #menu_container { 
@@ -209,14 +210,14 @@ nav {
     margin: 0px auto 0 auto;
     padding: 15px 0 25px 0;
     text-shadow: 0 1px #000;
-    /*height: 400px;*/
+    /!*height: 400px;*!/
 } 
 
 #sidebar_container { 
     float: left;
     width: 234px;
     margin-top: 20px;
-    background: #1D1D1D; /* Show a solid color for older browsers */
+    background: #1D1D1D; /!* Show a solid color for older browsers *!/
     -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 2px;
     -moz-box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 2px;
     box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 2px;
@@ -390,7 +391,7 @@ table tr td {
     border-top: 1px solid #FFF;
 }
 
-/* scroll to top */
+/!* scroll to top *!/
 #scroll { 
     position: relative; 
     width: 1000px;
@@ -417,12 +418,12 @@ table tr td {
 
 
 
-/**
+/!**
 Stylesheet for SooperFish by www.SooperThemes.com
 Author: Jurriaan Roelofs
-**/
+**!/
 
-/* Configuration of menu width */
+/!* Configuration of menu width *!/
 html body ul.sf-menu ul,html body ul.sf-menu ul li { 
     width: 220px;
 }
@@ -431,7 +432,7 @@ html body ul.sf-menu ul ul {
     margin: 0 0 0 220px;
 }
 
-/* Framework for proper showing/hiding/positioning */
+/!* Framework for proper showing/hiding/positioning *!/
 ul.sf-menu,ul.sf-menu * { 
     margin: 0;
     padding: 0;
@@ -450,7 +451,7 @@ ul.sf-menu li {
 }
 
 ul.sf-menu li:hover { 
-    visibility: inherit; /* fixes IE7 'sticky bug' */ 
+    visibility: inherit; /!* fixes IE7 'sticky bug' *!/
 }
 
 ul.sf-menu a { 
@@ -467,11 +468,11 @@ ul.sf-menu ul {
 }
 
 ul.sf-menu ul a { 
-    zoom: 1; /* IE6/7 fix */ 
+    zoom: 1; /!* IE6/7 fix *!/
 }
 
 ul.sf-menu ul li { 
-    float: left; /* Must always be floated otherwise there will be a rogue 1px margin-bottom in IE6/7 */
+    float: left; /!* Must always be floated otherwise there will be a rogue 1px margin-bottom in IE6/7 *!/
     width: 150px;
 }
 
@@ -494,7 +495,7 @@ ul.sf-menu ul ul ul li:hover ul ul,ul.sf-menu ul ul ul li:focus ul ul,ul.sf-menu
     left: -999999px;
 }
 
-/* autoArrows CSS */
+/!* autoArrows CSS *!/
 span.sf-arrow { 
     width: 7px;
     height: 7px;
@@ -503,7 +504,7 @@ span.sf-arrow {
     right: 5px;
     display: block;
     background: url(../images/arrows-white.png) no-repeat 0 0;
-    overflow: hidden; /* making sure IE6 doesn't overflow and expand the box */
+    overflow: hidden; /!* making sure IE6 doesn't overflow and expand the box *!/
     font-size: 1px;
 }
 
@@ -513,7 +514,7 @@ ul ul span.sf-arrow {
     background-position: 0 100%;
 }
 
-/* Theming the menu */
+/!* Theming the menu *!/
 ul#nav { 
     float: left;
     background: #003366;
@@ -538,7 +539,7 @@ ul#nav li a:hover,ul#nav li a:focus {
     color: #000;
     text-decoration: underline;
 }
-/*  *******************form css****************                   /*/
+/!*  *******************form css****************                   /!*!/
 
 
 
@@ -609,7 +610,7 @@ input[type=text], textarea, input[type=password] {
     -khtml-border-radius: 5px;
     background: -webkit-gradient(linear, left top, left 25, from(#FFFFFF), color-stop(4%, #EEEEEE), to(#FFFFFF));  
     background: -moz-linear-gradient(top, #FFFFFF, #EEEEEE 1px, #FFFFFF 25px); 
-   /*  position: absolute; */
+   /!*  position: absolute; *!/
     bottom: 0;
     left: 110px;
 }
@@ -772,4 +773,104 @@ select {
 
 
 
-/*form end*/
+/!*form end*!/*/
+ul#menu {
+    padding: 1px;
+}
+
+ul#menu li {
+    display: inline;
+}
+
+ul#menu li a {
+    background-color: green;
+    height:40px;
+    vertical-align:center;
+    color: white;
+    padding: 4px 25px;
+    text-decoration: none;
+    text-align:none;
+    font-family:Sans-serif;
+    border-radius: 9px 9px 9px 9px;
+}
+ul#menu li a:hover {
+    background-color: #73AD21;
+    height: 40px;
+}
+
+#border{
+    background-color:green;
+    background-size:100% 100%;
+    color:white;
+    clear:both;
+    text-align:none;
+    height: 45px;
+    padding:0.1px;
+    border-radius:9px;
+}
+#loginContainer {
+    position:relative;
+    float:right
+font-size:12px;
+}
+.userLogin {
+    width: 85px;
+    height: 51px;
+    float: right;
+    margin-top: 50px;
+    margin-right: 50px;
+}
+body {
+    background-color: #555555;
+}
+.mainDiv{
+    margin-left:5%;
+    margin-right:4%;
+}
+#img{
+    text-align: left;
+}
+.header{
+    background-color: white;
+    background-image: url(../images/LOGO1.PNG);
+    background-repeat:no-repeat;
+    color:white;
+    clear:both;
+    text-align:none;
+    height: 98px;
+    width:905px
+    padding:0.1px;
+    border-radius:9px;
+}
+
+.bg{
+    background-color: white;
+    background-image: url(../images/home.png);
+    background-repeat:no-repeat;
+    background-size:100% 100%;
+    color:white;
+    clear:both;
+    text-align:none;
+    height: 500px;
+    width:905px
+    padding:0.1px;
+    border-radius:9px;
+}
+.footer{
+    background-color:white;
+    color: #999999;
+    font-family: verdana;
+    font-size: 9px;
+    font-weight: bold;
+    line-height: 28px;
+    height: 40px;
+    padding:0.1px;
+    border-radius:9px;
+}
+.footerleft span {
+    color: #999999;
+    font-family: verdana;
+    font-size: 9px;
+    font-weight: bold;
+    line-height: 28px;
+}

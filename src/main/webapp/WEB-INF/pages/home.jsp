@@ -1,9 +1,9 @@
 <!DOCTYPE HTML>
 <html>
 <body>
-${message}
+<div class="bg">
 
-${requestScope.message}
+</div>
 </body>
 </html>
 
