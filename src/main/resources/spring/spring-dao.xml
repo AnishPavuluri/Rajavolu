@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+ http://www.springframework.org/schema/beans/spring-beans.xsd
+ http://www.springframework.org/schema/aop
+ http://www.springframework.org/schema/aop/spring-aop.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd">
+
+    <bean id="finderIntroductionAdvisor" class="com.village.rajavolu.aop.FinderIntroductionAdvisor"/>
+
+    <bean id="abstractDaoTarget" class="com.village.rajavolu.dao.impl.GenericDaoImpl" abstract="true"/>
+
+    <bean id="abstractDao" class="org.springframework.aop.framework.ProxyFactoryBean" abstract="true">
+        <property name="interceptorNames">
+            <list>
+                <value>finderIntroductionAdvisor</value>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="userDao" parent="abstractDao">
+        <property name="proxyInterfaces" value="com.village.rajavolu.dao.UserDao"/>
+        <property name="target">
+            <bean parent="abstractDaoTarget">
+                <constructor-arg value="com.village.rajavolu.dto.User"/>
+            </bean>
+        </property>
+    </bean>
+
+
+</beans>
