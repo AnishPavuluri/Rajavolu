@@ -11,7 +11,7 @@ import javax.persistence.Table;
  */
 @Entity
 @org.hibernate.annotations.Entity(dynamicInsert = true, dynamicUpdate = true)
-@Table(name = "COUNTRY")
+@Table(name = "USER")
 public class User extends BaseDto{
     private String name;
 
