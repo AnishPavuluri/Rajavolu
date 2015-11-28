@@ -1,0 +1,68 @@
+html, body {
+    min-height: 100%;
+}
+
+body {
+    position: relative;
+    background-color: #555555;
+}
+
+.overlay {
+    position: absolute;
+    top: -8px;
+    left: -6px;
+    width: 100%;
+    height: 101%;
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.5); /*dim the background*/
+}
+
+@media only screen and (min-width: 600px) {
+    .overlayWindow {
+        margin: 4em auto;
+        position: absolute;
+        padding: 11.4em;
+        top: 146px;
+        left: 443px;
+        width: 37%;
+        height: 57%;
+        z-index: 10;
+        -webkit-border-radius: 7px;
+        -moz-border-radius: 7px;
+        mso-padding-right-alt: 0px;
+        -khtml-border-radius: 7px;
+        content: " ";
+        background-color: white;
+        border-radius: 9px 9px 9px 9px;
+    }
+}
+
+.registerOverlay {
+    position: absolute;
+    top: -8px;
+    left: -6px;
+    width: 100%;
+    height: 101%;
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.5); /*dim the background*/
+}
+
+@media only screen and (min-width: 600px) {
+    .registerOverlayWindow {
+        margin: 4em auto;
+        position: absolute;
+        padding: 11.4em;
+        top: 9px;
+        left: 440px;
+        width: 34%;
+        height: 78%;
+        z-index: 10;
+        -webkit-border-radius: 7px;
+        -moz-border-radius: 7px;
+        mso-padding-right-alt: 0px;
+        -khtml-border-radius: 7px;
+        content: " ";
+        background-color: white;
+        border-radius: 135px 9px 135px 9px;
+    }
+}

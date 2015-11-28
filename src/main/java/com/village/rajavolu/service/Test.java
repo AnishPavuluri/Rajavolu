@@ -24,7 +24,8 @@ public class Test {
             /*("C:/Users/ZARA/workspace/HelloSpring/src/Beans.xml");*/
         UserService userService = (UserService) context.getBean("userService");
         User user = new User();
-        user.setName("Rama");
+        user.setFirstName("Anish");
+       // user.setName("Rama");
         userService.createUser(user);
 
         /*Class.forName("com.mysql.jdbc.Driver").newInstance();

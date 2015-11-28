@@ -3,22 +3,22 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
 
-    <bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+   <!-- <bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
         <property name="host" value="smtp.gmail.com"/>
         <property name="port" value="587"/>
-        <property name="username" value="anish.pavuluri@gmail.com"/>
-        <property name="password" value="AnishSrinu"/>
+        <property name="username" value=""/>
+        <property name="password" value=""/>
 
 
         <property name="javaMailProperties">
             <props>
                 <prop key="mail.smtp.auth">true</prop>
                 <prop key="mail.smtp.starttls.enable">true</prop>
-                <!--if it is not here we are getting error-->
-                <!--<prop key="mail.smtp.ssl.trust">smtp.gmail.com</prop>-->
+                &lt;!&ndash;if it is not here we are getting error&ndash;&gt;
+                &lt;!&ndash;<prop key="mail.smtp.ssl.trust">smtp.gmail.com</prop>&ndash;&gt;
             </props>
         </property>
 
-    </bean>
+    </bean>-->
 
 </beans>

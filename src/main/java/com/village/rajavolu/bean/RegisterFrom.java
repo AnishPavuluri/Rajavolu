@@ -1,17 +1,13 @@
-package com.village.rajavolu.dto;
+package com.village.rajavolu.bean;
 
-import javax.persistence.*;
 import java.util.Date;
 
 /**
- * User: user
- * Date: 11/15/15
- * Time: 10:56 PM
+ *
+ * Created by sony on 21/11/2015.
  */
-@Entity
-@org.hibernate.annotations.Entity(dynamicInsert = true, dynamicUpdate = true)
-@Table(name = "USER")
-public class User extends BaseDto {
+
+public class RegisterFrom {
 
     private String firstName;
 
@@ -31,7 +27,6 @@ public class User extends BaseDto {
 
     private String pinCode;
 
-    @Column(name = "FIRST_NAME",nullable = false)
     public String getFirstName() {
         return firstName;
     }
@@ -39,7 +34,7 @@ public class User extends BaseDto {
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
-    @Column(name = "LAST_NAME",nullable = false)
+
     public String getLastName() {
         return lastName;
     }
@@ -48,7 +43,6 @@ public class User extends BaseDto {
         this.lastName = lastName;
     }
 
-    @Column(name = "PASSWORD",nullable = false)
     public String getPassword() {
         return password;
     }
@@ -57,7 +51,6 @@ public class User extends BaseDto {
         this.password = password;
     }
 
-    @Column(name = "CONFIRMPWD",nullable = false)
     public String getConfirmPassword() {
         return confirmPassword;
     }
@@ -66,7 +59,6 @@ public class User extends BaseDto {
         this.confirmPassword = confirmPassword;
     }
 
-    @Column(name = "AADHAR_NO",nullable = false)
     public String getAadharNo() {
         return aadharNo;
     }
@@ -75,7 +67,6 @@ public class User extends BaseDto {
         this.aadharNo = aadharNo;
     }
 
-    @Column(name = "PIN_CODE",nullable = false)
     public String getPinCode() {
         return pinCode;
     }
@@ -84,7 +75,6 @@ public class User extends BaseDto {
         this.pinCode = pinCode;
     }
 
-    @Column(name = "EMAIL_ID",nullable = false)
     public String getEmailId() {
         return emailId;
     }
@@ -93,8 +83,6 @@ public class User extends BaseDto {
         this.emailId = emailId;
     }
 
-    @Column(name = "DOB",nullable = false)
-    @Temporal(TemporalType.TIMESTAMP)
     public Date getDateOfBirth() {
         return dateOfBirth;
     }
@@ -103,7 +91,6 @@ public class User extends BaseDto {
         this.dateOfBirth = dateOfBirth;
     }
 
-    @Column(name = "MOBILE_NO",nullable = false)
     public String getMobileNo() {
         return mobileNo;
     }

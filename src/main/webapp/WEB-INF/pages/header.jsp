@@ -16,8 +16,8 @@
             <li><a href="#">Gallery</a></li>
             <li><a href="#">Invitation</a></li>
             <li><a href="#">Route Map</a></li>
-            <li><a href="#">Login</a></li>
-            <li><a href="#">Register Now </a></li>
+            <li><a href="login">Login</a></li>
+            <li><a href="register">Register Now </a></li>
         </ul>
     </div>
   

@@ -3,6 +3,7 @@
        "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
        "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
 <tiles-definitions>
+
     <definition name="base.definition" template="/WEB-INF/pages/baseLayout.jsp">
         <put-attribute name="title" value="Rajavolu"/>
         <put-attribute name="header" value="/WEB-INF/pages/header.jsp" />
@@ -12,6 +13,15 @@
 
     <definition name="home" extends="base.definition">
         <put-attribute name="body" value="/WEB-INF/pages/home.jsp" />
+    </definition>
+
+    <definition name="login" extends="base.definition">
+        <put-attribute name="title" value="Rajavolu" />
+        <put-attribute name="body" value="/WEB-INF/pages/login.jsp" />
+    </definition>
+    <definition name="register" extends="base.definition">
+        <put-attribute name="title" value="Rajavolu" />
+        <put-attribute name="body" value="/WEB-INF/pages/register.jsp" />
     </definition>
 
 </tiles-definitions>
