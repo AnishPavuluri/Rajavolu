@@ -40,14 +40,13 @@ public class RegisterController {
         if (bindingResult.hasErrors()) {
             return new ModelAndView("register");
         }else{
-            DateFormat df = new SimpleDateFormat("MM/dd/yyyy");
             User user = new User();
             user.setFirstName(registerFrom.getFirstName());
             user.setLastName(registerFrom.getLastName());
             user.setEmailId(registerFrom.getEmailId());
             user.setPassword(registerFrom.getPassword());
             user.setConfirmPassword(registerFrom.getConfirmPassword());
-            user.setDateOfBirth(df.parse(registerFrom.getDateOfBirth()));
+            user.setDateOfBirth(registerFrom.getDateOfBirth());
             user.setMobileNo(registerFrom.getMobileNo());
             user.setAadharNo(registerFrom.getAadharNo());
             user.setPinCode(registerFrom.getPinCode());
