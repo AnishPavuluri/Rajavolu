@@ -24,19 +24,24 @@
             });
         });
     });
+    function closeOverLay() {
+            $(".registerOverlay").fadeOut("fast");
+            $(".registerOverlayWindow").fadeOut("fast");
+            $('.registerOverlayWindow').css("display", "none");
+            $('.registerOverlay').remove();
+    }
 </script>
-<form:errors/>
 <body>
 <div class="bg">
     <div class="registerOverlay"></div>
     <div id="login-box" class="registerOverlayWindow">
         <div class="registerheaderOverlay">
-            <span style="color:#FF7800;font-weight:bold;font-size:1.5rem;font-family:Microsoft YaHei"> Register Now </span>
+            <span style="color:#FF7800;font-weight:bold;font-size:1.4rem;font-family:Microsoft YaHei"> Register Now </span>
         </div>
         <form:form method="POST" action="registerBean" commandName="registerCommandName">
             <table>
                 <tr>
-                    <td><form:input path="firstName"  id="fn" placeholder="First Name"/></td>
+                    <td><form:input path="firstName"  placeholder="First Name"/></td>
                 </tr>
                 <tr>
                     <td><form:input path="lastName" placeholder="Last Name"/></td>
@@ -45,10 +50,10 @@
                     <td><form:input path="emailId" placeholder="Enter E-Mail"/></td>
                 </tr>
                 <tr>
-                    <td><form:input path="password" placeholder="Enter Password"/></td>
+                    <td><form:input path="password" type="password" placeholder="Enter Password"/></td>
                 </tr>
                 <tr>
-                    <td><form:input path="confirmPassword" placeholder="Re-Enter Password"/></td>
+                    <td><form:input path="confirmPassword" type="password" placeholder="Confirm Password"/></td>
                 </tr>
                 <tr>
                     <td><form:input path="dateOfBirth" id = "dob" placeholder="Enter date of birth"/></td>
@@ -67,6 +72,7 @@
                 </tr>
             </table>
         </form:form>
+        <span id="closeIcon" onclick="closeOverLay()" class="btn_Close" title="Close Window" alt="close"></span>
     </div>
 </div>
 </body>
