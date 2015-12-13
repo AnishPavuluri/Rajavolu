@@ -1,20 +1,21 @@
 package com.village.rajavolu.bean;
 
 /**
+ *
  * Created by sony on 15/11/2015.
  */
 
-public class LoginBean {
+public class LoginFrom {
 
-    private String email;
+    private String emailId;
     private String password;
 
-    public String getEmail() {
-        return email;
+    public String getEmailId() {
+        return emailId;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setEmailId(String emailId) {
+        this.emailId = emailId;
     }
 
     public String getPassword() {

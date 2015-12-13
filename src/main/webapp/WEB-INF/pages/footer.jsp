@@ -2,7 +2,7 @@
 <html>
 <body>
 <div class="footer">
-    <span align="center">&copy; 2015 Rajavolu All rights reserved.</span>
+    <a href="#"><span id="footerId">&copy; 2015 Rajavolu All rights reserved.</span></a>
 </div>
 </body>
 </html>

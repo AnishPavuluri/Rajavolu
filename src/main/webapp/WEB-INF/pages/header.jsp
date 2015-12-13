@@ -3,24 +3,25 @@
 <link>
 <meta charset="utf-8">
 <link rel="stylesheet" type="text/css" href="css/style.css"/>
+<head>
 </head>
 <body>
 
     <div class="header">
-     <img src="images/LOGO1.PNG">
+     <%--<img src="images/LOGO1.PNG">--%>
     </div>
     <div id="border">
-        <ul id="menu">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Gallery</a></li>
-            <li><a href="#">Invitation</a></li>
-            <li><a href="#">Route Map</a></li>
-            <li><a href="login">Login</a></li>
-            <li><a href="register">Register Now </a></li>
-        </ul>
+        <div class="menu">
+            <a href="#"><span id="home">Home</span></a>
+            <a href="#"><span id="about">About</span></a>
+            <a href="#"><span id="gallery">Gallery</span></a>
+            <a href="#"><span id="events">Events</span></a>
+            <a href="#"><span id="route">Route Map</span></a>
+            <a href="login"><span id="login">Login</span></a>
+            <a href="register"><span id="register">Register Now</span></a>
+        </div>
     </div>
-  
+
 </body>
 </html>
 

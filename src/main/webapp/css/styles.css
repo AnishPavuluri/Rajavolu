@@ -20,17 +20,17 @@ body {
 @media only screen and (min-width: 600px) {
     .overlayWindow {
         margin: 4em auto;
-        position: absolute;
+        position: fixed;
         top: 134px;
         left: 429px;
         width: 38%;
-        height: 45%;
+        height: 39%;
         z-index: 10;
         -webkit-border-radius: 24px 24px 24px 24px;
         -moz-border-radius: 24px 24px 24px 24px;
         -khtml-border-radius: 24px 24px 24px 24px;
         content: " ";
-        background-color: #F1F1F1;
+        background-color: rgba(0, 0, 0, 0.5);
         border-radius: 24px 24px 24px 24px;
     }
 }
@@ -47,10 +47,10 @@ body {
 @media only screen and (min-width: 600px) {
     .registerOverlayWindow {
         margin: 4em auto;
-        position: absolute;
-        padding: 11.4em;
-        top: -44px;
-        left: 466px;
+        position: fixed;
+        padding: 10.4em;
+        top: -27px;
+        left: 474px;
         width: 7%;
         height: 37%;
         z-index: 10;
@@ -68,16 +68,19 @@ body {
     width:200%;
     height:23px;
     padding:20px;
-    margin:-174px 287px 20px -68px;
-}
-#btn_close {
-    float: right;
-    margin: -70px -70px 0 0;
+    margin:-174px 287px 14px -49px;
 }
 #closeIcon{
-    background: url("../images/overlay_close_button.png");
-    width:10%;
-    height:10px;
-    padding:2px;
-    user-focus-pointer: 1px;
+    background: url("../images/overlay_close_button.png") no-repeat;
+    width:50%;
+    height:50px;
+    float: left;
+    cursor: pointer;
+    margin-left: 5px;
+    margin-right: 5px;
+    display:inline;
+    z-index:3200;
+    position:absolute;
+    top:-19px;
+    right:-192px;
 }

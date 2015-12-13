@@ -30,7 +30,7 @@ public class RegisterController {
     UserService userService;
 
     @RequestMapping(value = "/register",method = RequestMethod.GET)
-    public ModelAndView getLoginPage() {
+    public ModelAndView getRegistrationPage() {
         return new ModelAndView("register","registerCommandName",new RegisterFrom());
     }
 

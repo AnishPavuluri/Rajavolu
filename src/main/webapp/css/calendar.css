@@ -8,24 +8,33 @@ select{
     margin:5px 10px 20px 35px;
 }
 input[type=text]{
-    width:200%;
-    border:3px solid rgb(200, 200, 207);
+    width:194%;
+    border:2px solid rgb(200, 200, 207);
     height:23px;
     padding:6px;
     border-radius:6px;
-    margin:-13px 287px 20px -134px;
+    margin:-13px 287px 20px -129px;
 }
+input[type=password]{
+    width:194%;
+    border:2px solid rgb(200, 200, 207);
+    height:23px;
+    padding:6px;
+    border-radius:6px;
+    margin:-13px 287px 20px -129px;
+}
+
 input[type=submit]{
-    width:112%;
+    width:91%;
     border:0px solid rgb(200, 200, 207);
-    height:42px;
+    height:38px;
     padding:0px;
-    line-height:20px;
-    border-radius:10px;
+    line-height:17px;
+    border-radius:4px;
     font-family:Microsoft YaHei;
     font-weight:bold;
     font-size:16px;
-    margin:-10px 133px -48px -67px;
+    margin:-10px 133px -48px -52px;
     background-color:green;
 }
 label{

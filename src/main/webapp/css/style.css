@@ -22,16 +22,6 @@ ul#menu li a:hover {
     height: 40px;
 }
 
-#border{
-    background-color:green;
-    background-size:100% 100%;
-    color:white;
-    clear:both;
-    text-align:none;
-    height: 45px;
-    padding:0.1px;
-    border-radius:9px;
-}
 #loginContainer {
     position:relative;
     float:right
@@ -56,9 +46,9 @@ body {
 }
 .header{
     background-color: white;
-    background-image: url(../images/LOGO1.PNG);
-    background-repeat:no-repeat;
-    color:white;
+    background-image: url(../images/thoranam.gif);
+    background-repeat:repeat-x;
+    background-color:#FFF;
     clear:both;
     text-align:none;
     height: 98px;
@@ -85,27 +75,151 @@ body {
     background-size:100% 100%;
     color:white;
     clear:both;
-    text-align:none;
     height: 500px;
     width:905px
     padding:0.1px;
+    margin-bottom:6px;
     border-radius:9px;
 }
-.footer{
-    background-color:white;
-    color: #999999;
-    font-family: verdana;
-    font-size: 9px;
-    font-weight: bold;
-    line-height: 28px;
-    height: 40px;
-    padding:0.1px;
-    border-radius:9px;
+.menu {
+    display:inline-block;
+    height:45px;
 }
-.footerleft span {
-    color: #999999;
-    font-family: verdana;
-    font-size: 9px;
-    font-weight: bold;
-    line-height: 28px;
+.menu:after, .menu:before {
+    margin-top:0.5em;
+    content: "";
+    float:left;
+    border:1em solid #fff;/*boder  transparent size*/
+}
+.menu:after {
+    border-right-color:transparent;
+}
+.menu:before {
+    border-left-color:transparent;
+}
+.menu a:link, .menu a:visited {
+    color:#fff;
+    text-decoration:none;
+    float:left;
+    height:2.5em;
+    overflow:hidden;
+}
+.menu span {
+    font-family:"Comic Sans MS", cursive;
+    background:#A23EF9;
+    display:inline-block;
+    line-height:2em;/*+ h*/
+    padding:0 3.3em;/*+ width*/
+    margin-top:0.5em;
+    position:relative;
+    transition: background-color 0.2s, margin-top 0.2s;
+    -webkit-transition: background-color 0.2s, margin-top 0.2s;  /* Saf3.2+, Chrome */
+    -moz-transition: background-color 0.2s, margin-top 0.2s;  /* FF4+ */
+    -ms-transition: background-color 0.2s, margin-top 0.2s;  /* IE10 */
+    -o-transition: background-color 0.2s, margin-top 0.2s;  /* Opera 10.5+ */
+
+}
+.menu a:hover span {
+    background:#FFD204;
+    margin-top:1px;
+}
+
+.menu span:before {
+    content: "";
+    position:absolute;
+    top:2em;
+    left:0;
+    border-right:0.5em solid #9B8651;
+    border-bottom:0.5em solid #fff;
+}
+.menu span:after {
+    content: "";
+    position:absolute;
+    top:2em;
+    right:0;
+    border-left:0.5em solid #9B8651;
+    border-bottom:0.5em solid #fff;
+}
+#home{
+    background-color:#79141D;
+}
+#about{
+    background:#00BCD4 ;
+}
+#gallery{
+    background:#029688;
+}
+#events{
+    background:#FFC107	;
+}
+#route{
+    background:#8BC34A ;
+}
+#login{
+    background:#832094 ;
+}
+#register{
+    background:#FF9800;
+}
+
+.footer {
+    display:inline-block;
+    height:45px;
+}
+.footer:after, .footer:before {
+    margin-top:0.5em;
+    content: "";
+    float:left;
+    border:1em solid #FFF;/*boder  transparent size*/
+}
+.footer:after {
+    border-right-color:transparent;
+}
+.footer:before {
+    border-left-color:transparent;
+}
+.footer a:link, .footer a:visited {
+    color:#fff;
+    text-decoration:none;
+    float:left;
+    height:2.5em;
+    overflow:hidden;
+}
+.footer span {
+    font-family:"Comic Sans MS", cursive;
+    background:#029688;
+    display:inline-block;
+    line-height:2em;/*+ h*/
+    padding:1px 27.4em;/*+ width*/
+    margin-top:0.0em;
+    position: relative;
+    transition: background-color 0.2s, margin-top 0.2s;
+    -webkit-transition: background-color 0.2s, margin-top 0.2s;  /* Saf3.2+, Chrome */
+    -moz-transition: background-color 0.2s, margin-top 0.2s;  /* FF4+ */
+    -ms-transition: background-color 0.2s, margin-top 0.2s;  /* IE10 */
+    -o-transition: background-color 0.2s, margin-top 0.2s;  /* Opera 10.5+ */
+
+}
+/*
+.footer a:hover span {
+    background:#FFD204;
+    margin-top:2px;
+}
+*/
+
+.footer span:before {
+    content: "";
+    position:absolute;
+    top:2em;
+    left:0;
+    border-right:0.5em solid #9B8651;
+    border-bottom:0.5em solid #fff;
+}
+.footer span:after {
+    content: "";
+    position:absolute;
+    top:2em;
+    right:0;
+    border-left:0.5em solid #9B8651;
+    border-bottom:0.5em solid #fff;
 }
