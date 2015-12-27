@@ -6,22 +6,27 @@
 
     <definition name="base.definition" template="/WEB-INF/pages/baseLayout.jsp">
         <put-attribute name="title" value="Rajavolu"/>
-        <put-attribute name="header" value="/WEB-INF/pages/header.jsp" />
-        <put-attribute name="body" value="" />
-        <put-attribute name="footer" value="/WEB-INF/pages/footer.jsp" />
+        <put-attribute name="header" value="/WEB-INF/pages/header.jsp"/>
+        <put-attribute name="body" value=""/>
+        <put-attribute name="footer" value="/WEB-INF/pages/footer.jsp"/>
     </definition>
 
     <definition name="home" extends="base.definition">
-        <put-attribute name="body" value="/WEB-INF/pages/home.jsp" />
+        <put-attribute name="body" value="/WEB-INF/pages/home.jsp"/>
     </definition>
 
     <definition name="login" extends="base.definition">
-        <put-attribute name="title" value="Rajavolu" />
-        <put-attribute name="body" value="/WEB-INF/pages/login.jsp" />
+        <put-attribute name="body" value="/WEB-INF/pages/login.jsp"/>
     </definition>
     <definition name="register" extends="base.definition">
-        <put-attribute name="title" value="Rajavolu" />
         <put-attribute name="body" value="/WEB-INF/pages/register.jsp" />
+    </definition>
+    <definition name="uploadImages" extends="base.definition">
+        <put-attribute name="body" value="/WEB-INF/pages/uploadImages.jsp"/>
+    </definition>
+
+    <definition name="uploadImageIndex" extends="base.definition">
+        <put-attribute name="body" value="/WEB-INF/pages/uploadImageIndex.jsp"/>
     </definition>
 
 </tiles-definitions>
