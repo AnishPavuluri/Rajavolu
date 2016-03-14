@@ -1,18 +1,13 @@
-package com.village.rajavolu.bean;
+package com.village.rajavolu.dto;
 
-import org.springframework.format.annotation.DateTimeFormat;
-
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Past;
 import java.io.Serializable;
 import java.util.Date;
 
 /**
  *
- * Created by Srinivas.V on 21/11/2015.
+ * Created by Srinivas.V on 23/12/2015.
  */
-
-public class RegisterFrom implements Serializable {
+public class UserVO implements Serializable{
 
     private String firstName;
 
@@ -24,8 +19,6 @@ public class RegisterFrom implements Serializable {
 
     private String confirmPassword;
 
-    @DateTimeFormat(pattern = "dd/MM/yyyy")
-    @NotNull @Past
     private Date dateOfBirth;
 
     private String mobileNo;
@@ -50,6 +43,14 @@ public class RegisterFrom implements Serializable {
         this.lastName = lastName;
     }
 
+    public String getEmailId() {
+        return emailId;
+    }
+
+    public void setEmailId(String emailId) {
+        this.emailId = emailId;
+    }
+
     public String getPassword() {
         return password;
     }
@@ -66,30 +67,6 @@ public class RegisterFrom implements Serializable {
         this.confirmPassword = confirmPassword;
     }
 
-    public String getAadharNo() {
-        return aadharNo;
-    }
-
-    public void setAadharNo(String aadharNo) {
-        this.aadharNo = aadharNo;
-    }
-
-    public String getPinCode() {
-        return pinCode;
-    }
-
-    public void setPinCode(String pinCode) {
-        this.pinCode = pinCode;
-    }
-
-    public String getEmailId() {
-        return emailId;
-    }
-
-    public void setEmailId(String emailId) {
-        this.emailId = emailId;
-    }
-
     public Date getDateOfBirth() {
         return dateOfBirth;
     }
@@ -104,5 +81,21 @@ public class RegisterFrom implements Serializable {
 
     public void setMobileNo(String mobileNo) {
         this.mobileNo = mobileNo;
+    }
+
+    public String getAadharNo() {
+        return aadharNo;
+    }
+
+    public void setAadharNo(String aadharNo) {
+        this.aadharNo = aadharNo;
+    }
+
+    public String getPinCode() {
+        return pinCode;
+    }
+
+    public void setPinCode(String pinCode) {
+        this.pinCode = pinCode;
     }
 }

@@ -8,6 +8,11 @@ import java.util.Date;
  * Date: 11/15/15
  * Time: 10:56 PM
  */
+@NamedQueries({
+        @NamedQuery(name = "User.findByEmailOrMobileNo", query ="from User user where user.emailId = ? and user.mobileNo = ?"),
+        @NamedQuery(name = "User.findByUserEmailAndPassword", query ="from User user where user.emailId=? and user.password=?"),
+        @NamedQuery(name = "User.findByUserEmail", query ="from User user where user.emailId=?"),
+})
 @Entity
 @org.hibernate.annotations.Entity(dynamicInsert = true, dynamicUpdate = true)
 @Table(name = "USER")
@@ -94,7 +99,7 @@ public class User extends BaseDto {
     }
 
     @Column(name = "DOB",nullable = false)
-    @Temporal(TemporalType.TIMESTAMP)
+    @Temporal(TemporalType.DATE)
     public Date getDateOfBirth() {
         return dateOfBirth;
     }

@@ -70,7 +70,7 @@ body {
 
 .bg{
     background-color: white;
-    background-image: url(../images/home.png);
+    background-image: url(../images/2016.PNG);
     background-repeat:no-repeat;
     background-size:100% 100%;
     color:white;
@@ -106,7 +106,7 @@ body {
 }
 .menu span {
     font-family:"Comic Sans MS", cursive;
-    background:#A23EF9;
+    background:#8BC34A;
     display:inline-block;
     line-height:2em;/*+ h*/
     padding:0 3.3em;/*+ width*/
@@ -144,22 +144,22 @@ body {
     background-color:#79141D;
 }
 #about{
-    background:#00BCD4 ;
+    background-color:#00BCD4 ;
 }
 #gallery{
-    background:#029688;
+    background-color:#029688;
 }
 #events{
-    background:#FFC107	;
+    background-color:#FFC107	;
 }
-#route{
-    background:#8BC34A ;
+#map{
+    background-color:#8BC34A ;
 }
 #login{
-    background:#832094 ;
+    background-color:#832094 ;
 }
 #register{
-    background:#FF9800;
+    background-color:#FF9800;
 }
 
 .footer {

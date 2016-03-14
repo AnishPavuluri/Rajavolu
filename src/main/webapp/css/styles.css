@@ -84,3 +84,38 @@ body {
     top:-19px;
     right:-192px;
 }
+/*.error {
+    color: #ff0000;
+    opacity: 1;
+    margin-left: 271px;
+    visibility: visible;
+    -webkit-transition: opacity 0.2s , visibility 0.0s;
+    -moz-transition: opacity 0.2s , visibility 0.0s;
+    transition: opacity 0.2s , visibility 0.0s;
+}*/
+.cd-form .error {
+    color: red; font-size: 1.0em; font-weight: bold;
+    margin-right: 231px;
+    /*margin-left: 93px;*/
+    /*border: 1px solid red;*/
+}
+.cd-form .error.is-visible {
+    opacity: 1;
+    visibility: visible;
+    -webkit-transition: opacity 0.2s , visibility 0.0s;
+    -moz-transition: opacity 0.2s , visibility 0.0s;
+    transition: opacity 0.2s , visibility 0.0s;
+}
+.error {
+    color: red; font-size: 1.0em; font-weight: bold;
+    /*padding: 1.4em 1.4em 0;*/
+    /*font-size: 14px;*/
+    /*font-size: 0.875rem;*/
+    /*line-height: 1.4;*/
+    /*text-align: center;*/
+}
+@media only screen and (min-width: 600px) {
+    .error {
+        padding: 2em 2em 0;
+    }
+}

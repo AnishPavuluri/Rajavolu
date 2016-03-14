@@ -18,6 +18,9 @@
     <bean class="org.springframework.web.servlet.view.tiles3.TilesViewResolver">
          <property name="viewClass" value="org.springframework.web.servlet.view.tiles3.TilesView" />
     </bean>
+    <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+        <property name="basename" value="validation"/>
+    </bean>
     <bean class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">
         <property name="definitions">
             <list>

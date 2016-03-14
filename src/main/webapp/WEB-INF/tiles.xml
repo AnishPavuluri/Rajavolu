@@ -23,5 +23,9 @@
         <put-attribute name="title" value="Rajavolu" />
         <put-attribute name="body" value="/WEB-INF/pages/register.jsp" />
     </definition>
+    <!--<definition name="map" extends="base.definition">
+        <put-attribute name="title" value="Rajavolu" />
+        <put-attribute name="body" value="/WEB-INF/pages/routeMap.jsp" />
+    </definition>-->
 
 </tiles-definitions>

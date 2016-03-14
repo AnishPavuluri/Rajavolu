@@ -6,6 +6,8 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ taglib prefix="core" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <link rel="stylesheet" type="text/css" href="css/styles.css"/>
 <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
@@ -38,35 +40,80 @@
         <div class="registerheaderOverlay">
             <span style="color:#FF7800;font-weight:bold;font-size:1.4rem;font-family:Microsoft YaHei"> Register Now </span>
         </div>
-        <form:form method="POST" action="registerBean" commandName="registerCommandName">
+        <form:form class="cd-form" method="POST" action="registerBean" commandName="registerCommandName">
             <table>
+                <spring:bind path="firstName">
+                    <span class="form-group ${status.error ? 'has-error' : ''}">
                 <tr>
-                    <td><form:input path="firstName"  placeholder="First Name"/></td>
+                    <td><form:input path="firstName"  id="firstName" placeholder="First Name"/></td>
+                    <td><form:errors path="firstName" cssClass="error"/></td>
                 </tr>
+                    </span>
+                </spring:bind>
+                <spring:bind path="lastName">
+                    <span class="form-group ${status.error ? 'has-error' : ''}">
                 <tr>
                     <td><form:input path="lastName" placeholder="Last Name"/></td>
+                    <td><form:errors path="lastName" cssClass="error" /></td>
                 </tr>
+                    </span>
+                </spring:bind>
+                <spring:bind path="emailId">
+                    <span class="form-group ${status.error ? 'has-error' : ''}">
                 <tr>
                     <td><form:input path="emailId" placeholder="Enter E-Mail"/></td>
+                    <td><form:errors path="emailId" cssClass="error" /></td>
                 </tr>
+                    </span>
+                </spring:bind>
+                <spring:bind path="emailId">
+                    <span class="form-group ${status.error ? 'has-error' : ''}">
                 <tr>
                     <td><form:input path="password" type="password" placeholder="Enter Password"/></td>
+                    <td><form:errors path="password" cssClass="error" /></td>
                 </tr>
+                    </span>
+                </spring:bind>
+                <spring:bind path="confirmPassword">
+                    <span class="form-group ${status.error ? 'has-error' : ''}">
                 <tr>
                     <td><form:input path="confirmPassword" type="password" placeholder="Confirm Password"/></td>
+                    <td><form:errors path="confirmPassword" cssClass="error" /></td>
                 </tr>
+                    </span>
+                </spring:bind>
+                <spring:bind path="dateOfBirth">
+                    <span class="form-group ${status.error ? 'has-error' : ''}">
                 <tr>
                     <td><form:input path="dateOfBirth" id = "dob" placeholder="Enter date of birth"/></td>
+                    <td><form:errors path="dateOfBirth" cssClass="error" /></td>
                 </tr>
+                    </span>
+                </spring:bind>
+                <spring:bind path="mobileNo">
+                    <span class="form-group ${status.error ? 'has-error' : ''}">
                 <tr>
                     <td><form:input path="mobileNo" placeholder="Enter mobile no"/></td>
+                    <td><form:errors path="mobileNo" cssClass="error" /></td>
                 </tr>
+                    </span>
+                </spring:bind>
+                <spring:bind path="aadharNo">
+                    <span class="form-group ${status.error ? 'has-error' : ''}">
                 <tr>
                     <td><form:input path="aadharNo" placeholder="Enter aadhar no"/></td>
+                    <td><form:errors path="aadharNo" cssClass="error" /></td>
                 </tr>
+                    </span>
+                </spring:bind>
+                <spring:bind path="pinCode">
+                    <span class="form-group ${status.error ? 'has-error' : ''}">
                 <tr>
                     <td><form:input path="pinCode" placeholder="Enter PIN code"/></td>
+                    <td><form:errors path="pinCode" cssClass="error" /></td>
                 </tr>
+                    </span>
+                </spring:bind>
                 <tr>
                     <td><input type="submit" value="submit" /></td>
                 </tr>

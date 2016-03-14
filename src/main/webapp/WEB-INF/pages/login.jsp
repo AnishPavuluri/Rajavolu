@@ -1,4 +1,5 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <link rel="stylesheet" type="text/css" href="css/styles.css"/>
 <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
@@ -18,16 +19,26 @@
     <div class="overlayWindow">
         <form:form method="POST" action="loginFrom" commandName="loginCommandName">
             <table>
+                <spring:bind path="emailId">
+                    <span class="form-group ${status.error ? 'has-error' : ''}">
                 <tr>
-                    <td><form:input path="emailId" placeholder="Enter E-Mail/Mobile No"/></td>
+                    <td><form:input path="emailId" placeholder="Enter E-Mail address"/></td>
+                    <td><form:errors path="emailId" cssClass="error"/></td>
                 </tr>
+                    </span>
+                </spring:bind>
+                <spring:bind path="password">
+                    <span class="form-group ${status.error ? 'has-error' : ''}">
                 <tr>
                     <td><form:input path="password" type="password" placeholder="Enter Password"/></td>
+                    <td><form:errors path="password" cssClass="error"/></td>
                 </tr>
+                    </span>
+                </spring:bind>
                 <tr>
                     <td><input type="submit" value="Login"/></td>
                     <td>
-                        <a href="#" class="forgot">forgot password?</a>
+                        <a href="#" class="forgot" onclick="forgot()">forgot password?</a>
                     </td>
                 </tr>
             </table>
