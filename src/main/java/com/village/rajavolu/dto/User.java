@@ -11,7 +11,7 @@ import java.util.Date;
 @NamedQueries({
         @NamedQuery(name = "User.findByEmailOrMobileNo", query ="from User user where user.emailId = ? and user.mobileNo = ?"),
         @NamedQuery(name = "User.findByUserEmailAndPassword", query ="from User user where user.emailId=? and user.password=?"),
-        @NamedQuery(name = "User.findByUserEmail", query ="from User user where user.emailId=?"),
+        @NamedQuery(name = "User.findByUserEmail", query ="from User user where user.emailId=?")
 })
 @Entity
 @org.hibernate.annotations.Entity(dynamicInsert = true, dynamicUpdate = true)

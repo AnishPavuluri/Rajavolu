@@ -56,6 +56,17 @@ body {
     padding:0.1px;
     border-radius:9px;
 }
+.bodyUpload{
+    background-color: white;
+    clear:both;
+    text-align:center;
+    background-size:100% 100%;
+    height: 500px;
+    width:905px
+    padding:0.1px;
+    margin-bottom:6px;
+    border-radius:9px;
+}
 .opo{
     background-color: white;
     background-repeat:no-repeat;

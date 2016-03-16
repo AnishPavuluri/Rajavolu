@@ -1,8 +1,9 @@
 package com.village.rajavolu.controller;
 
 import com.village.rajavolu.form.UploadItem;
-import com.village.rajavolu.util.ZipUtil;
+import com.village.rajavolu.Util.ZipUtil;
 import org.apache.commons.io.IOUtils;
+import org.apache.log4j.Logger;
 import org.apache.velocity.texen.util.FileUtil;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -25,6 +26,8 @@ import java.io.*;
 @Controller
 public class ImageUploadController {
 
+    private static final Logger LOGGER = Logger.getLogger(ImageUploadController.class);
+
     @RequestMapping(value = "uploadImage" ,method = RequestMethod.GET)
     public ModelAndView getUploadForm(Model model) {
         model.addAttribute(new UploadItem());
@@ -35,7 +38,8 @@ public class ImageUploadController {
     public String create(UploadItem uploadItem, HttpServletRequest request, HttpServletResponse response, HttpSession session) {
         try {
             MultipartFile file = uploadItem.getFileData();
-            System.out.println("file----->"+file);
+            LOGGER.warn("file----->"+file);
+            //System.out.println("file----->"+file);
             InputStream inputStream = null;
             OutputStream outputStream = null;
             if (file.getSize() > 0) {
@@ -70,7 +74,8 @@ public class ImageUploadController {
         response.setContentType("image/jpeg, image/jpg, image/png, image/gif");
         try {
             String fileName = (String)session.getAttribute("uploadImage");
-            System.out.println("fileName----------->"+fileName);
+            //System.out.println("fileName----------->"+fileName);
+            LOGGER.warn("fileName----------->"+fileName);
             BufferedInputStream inputStream = new BufferedInputStream(new FileInputStream(fileName));
             response.getOutputStream().write(IOUtils.toByteArray(inputStream));
             response.getOutputStream().close();
