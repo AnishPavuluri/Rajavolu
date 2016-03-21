@@ -29,6 +29,14 @@
             </bean>
         </property>
     </bean>
+    <bean id="imagesLocationDao" parent="abstractDao">
+        <property name="proxyInterfaces" value="com.village.rajavolu.dao.ImagesLocationDao"/>
+        <property name="target">
+            <bean parent="abstractDaoTarget">
+                <constructor-arg value="com.village.rajavolu.dto.ImagesLocation"/>
+            </bean>
+        </property>
+    </bean>
 
 
 </beans>

@@ -1,7 +1,8 @@
 package com.village.rajavolu.controller;
 
+import com.village.rajavolu.Constants.StringConstants;
 import com.village.rajavolu.form.UploadItem;
-import com.village.rajavolu.Util.ZipUtil;
+import com.village.rajavolu.util.ZipUtil;
 import org.apache.commons.io.IOUtils;
 import org.apache.log4j.Logger;
 import org.apache.velocity.texen.util.FileUtil;
@@ -38,7 +39,7 @@ public class ImageUploadController {
     public String create(UploadItem uploadItem, HttpServletRequest request, HttpServletResponse response, HttpSession session) {
         try {
             MultipartFile file = uploadItem.getFileData();
-            LOGGER.warn("file----->"+file);
+            LOGGER.warn("file----->" + file);
             //System.out.println("file----->"+file);
             InputStream inputStream = null;
             OutputStream outputStream = null;
@@ -74,6 +75,7 @@ public class ImageUploadController {
         response.setContentType("image/jpeg, image/jpg, image/png, image/gif");
         try {
             String fileName = (String)session.getAttribute("uploadImage");
+            fileName = StringConstants.IMAGES_PATH+"images\\villege.png";
             //System.out.println("fileName----------->"+fileName);
             LOGGER.warn("fileName----------->"+fileName);
             BufferedInputStream inputStream = new BufferedInputStream(new FileInputStream(fileName));

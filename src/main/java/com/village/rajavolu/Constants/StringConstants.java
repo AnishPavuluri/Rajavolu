@@ -14,4 +14,6 @@ public class StringConstants {
     public static final String PHONE_NUMBER="^\\(?([0-9]{3})\\)?[-.]?([0-9]{3})[-.]?([0-9]{4})$";
     public static final String EMAIL="^[A-Za-z0-9\\+]+(\\.[A-Za-z0-9]+)*@"
             + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
+
+    public static final String IMAGES_PATH = "C:\\RajavoluImages\\";
 }

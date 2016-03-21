@@ -1,4 +1,4 @@
-package com.village.rajavolu.Util;
+package com.village.rajavolu.util;
 
 import com.village.rajavolu.dao.UserDao;
 import com.village.rajavolu.dto.User;

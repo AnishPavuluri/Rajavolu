@@ -1,4 +1,4 @@
-package com.village.rajavolu.Util;
+package com.village.rajavolu.util;
 
 import com.village.rajavolu.Constants.StringConstants;
 import org.apache.commons.lang.StringUtils;

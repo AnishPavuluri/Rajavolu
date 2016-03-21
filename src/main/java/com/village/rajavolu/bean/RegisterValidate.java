@@ -1,6 +1,6 @@
 package com.village.rajavolu.bean;
 
-import com.village.rajavolu.Util.ValidationUtil;
+import com.village.rajavolu.util.ValidationUtil;
 import com.village.rajavolu.dto.User;
 import com.village.rajavolu.service.UserService;
 import org.apache.commons.lang.StringUtils;
