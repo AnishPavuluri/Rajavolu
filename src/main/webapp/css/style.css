@@ -78,6 +78,10 @@ body {
     padding:0.1px;
     border-radius:9px;
 }
+.form-control{
+    font-size: 16px;
+    font-family:"Trebuchet MS", cursive;
+}
 
 .bg{
     background-color: white;
@@ -157,7 +161,7 @@ body {
 #about{
     background-color:#00BCD4 ;
 }
-#gallery{
+#uploadImage{
     background-color:#029688;
 }
 #events{
@@ -169,7 +173,13 @@ body {
 #login{
     background-color:#832094 ;
 }
+#logout{
+    background-color:#832094 ;
+}
 #register{
+    background-color:#FF9800;
+}
+#userName{
     background-color:#FF9800;
 }
 

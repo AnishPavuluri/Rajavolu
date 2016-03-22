@@ -12,6 +12,12 @@
         $('.overlayWindow').css("display", "none");
         $('.overlay').remove();
     }
+    function forgot(){
+        alert("Hi forgot")
+        $("#emailId").css("display","none");
+        $("#password").css("display","none");
+        $("#forEmail").css("display","block");
+    }
 </script>
 <body>
 <div class="bg">
@@ -22,7 +28,7 @@
                 <spring:bind path="emailId">
                     <span class="form-group ${status.error ? 'has-error' : ''}">
                 <tr>
-                    <td><form:input path="emailId" placeholder="Enter E-Mail address"/></td>
+                    <td><form:input path="emailId" id="emailId" class="form-control" placeholder="Enter E-Mail address"/></td>
                     <td><form:errors path="emailId" cssClass="error"/></td>
                 </tr>
                     </span>
@@ -30,13 +36,13 @@
                 <spring:bind path="password">
                     <span class="form-group ${status.error ? 'has-error' : ''}">
                 <tr>
-                    <td><form:input path="password" type="password" placeholder="Enter Password"/></td>
+                    <td><form:input path="password" id="password" type="password" class="form-control" placeholder="Enter Password"/></td>
                     <td><form:errors path="password" cssClass="error"/></td>
                 </tr>
                     </span>
                 </spring:bind>
                 <tr>
-                    <td><input type="submit" value="Login"/></td>
+                    <td><input type="submit" id="login" value="Login"/></td>
                     <td>
                         <a href="#" class="forgot" onclick="forgot()">forgot password?</a>
                     </td>

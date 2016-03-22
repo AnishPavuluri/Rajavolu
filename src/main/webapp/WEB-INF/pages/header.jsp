@@ -26,8 +26,18 @@
             <a href="uploadImage"><span id="uploadImage">Gallery</span></a>
             <a href="#"><span id="events">Events</span></a>
             <a href="#"><span id="map">Route Map</span></a>
+            <%
+                String username = (String) session.getAttribute("user");
+                String firstName = (String) session.getAttribute("firstName");
+                if (username == null || firstName == null) {
+            %>
             <a href="login"><span id="login">Login</span></a>
             <a href="register"><span id="register">Register Now</span></a>
+            <% } else {
+            %>
+            <a href="logout"><span id="logout">Logout</span></a>
+            <a href="#"><span id="userName"> Hi,  <%=firstName%></span></a>
+            <% }%>
         </div>
     </div>
 

@@ -34,9 +34,7 @@ public class LoginValidator implements Validator {
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "password", "NotEmpty.loginFrom.password");
 
         if (!errors.hasErrors()) {
-           // List<User> user = userService.findByUserEmailAndPassword(loginFrom.getEmailId(), loginFrom.getPassword());
             List<User> user = userService.findByUserEmail(loginFrom.getEmailId());
-            LOGGER.warn("********User info-->"+user);
             if (user.isEmpty()) {
                 errors.rejectValue("password", "NotMatch.loginFrom.email");
             } else {
