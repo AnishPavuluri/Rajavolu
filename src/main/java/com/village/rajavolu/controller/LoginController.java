@@ -52,10 +52,6 @@ public class LoginController {
             HttpSession session = request.getSession(true);
             String user = request.getParameter("emailId");
             session.setAttribute("user", user);
-            List<User> userData = userService.findByUserEmail(user);
-            for (User userDetails : userData) {
-                session.setAttribute("firstName", userDetails.getFirstName().substring(0, 1).toUpperCase() + userDetails.getFirstName().substring(1));
-            }
             return new ModelAndView("home");
         }
     }

@@ -7,8 +7,12 @@ import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
 import org.springframework.validation.ValidationUtils;
 import org.springframework.validation.Validator;
+import org.springframework.web.context.request.RequestContextHolder;
+import org.springframework.web.context.request.ServletRequestAttributes;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 /**
@@ -38,6 +42,8 @@ public class LoginValidator implements Validator {
             if (user.isEmpty()) {
                 errors.rejectValue("password", "NotMatch.loginFrom.email");
             } else {
+                ServletRequestAttributes requestAttributes = (ServletRequestAttributes) RequestContextHolder.currentRequestAttributes();
+                HttpServletRequest request = requestAttributes.getRequest();
                 for (User users : user) {
                     if (users.getEmailId().equalsIgnoreCase(loginFrom.getEmailId()) ||
                             users.getMobileNo().equalsIgnoreCase(loginFrom.getMobileNo())) {
@@ -45,6 +51,8 @@ public class LoginValidator implements Validator {
                             errors.rejectValue("password", "NotSame.loginFrom.password");
                         }
                     }
+                    HttpSession session = request.getSession(true);
+                    session.setAttribute("firstName", users.getFirstName().substring(0, 1).toUpperCase() + users.getFirstName().substring(1));
                 }
             }
         }
