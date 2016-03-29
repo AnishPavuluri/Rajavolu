@@ -9,6 +9,7 @@ import org.springframework.web.multipart.commons.CommonsMultipartFile;
  */
 public class UploadItem {
     private String filename;
+    private String eventName;
     private CommonsMultipartFile fileData;
 
     public String getFilename() {
@@ -17,6 +18,14 @@ public class UploadItem {
 
     public void setFilename(String filename) {
         this.filename = filename;
+    }
+
+    public String getEventName() {
+        return eventName;
+    }
+
+    public void setEventName(String eventName) {
+        this.eventName = eventName;
     }
 
     public CommonsMultipartFile getFileData() {

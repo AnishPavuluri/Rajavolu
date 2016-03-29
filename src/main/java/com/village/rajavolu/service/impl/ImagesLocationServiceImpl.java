@@ -2,14 +2,15 @@ package com.village.rajavolu.service.impl;
 
 import com.village.rajavolu.dao.ImagesLocationDao;
 import com.village.rajavolu.dto.ImagesLocation;
+import com.village.rajavolu.form.ImagesLocationForm;
 import com.village.rajavolu.service.ImagesLocationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.PostConstruct;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * User: user
@@ -22,15 +23,27 @@ public class ImagesLocationServiceImpl implements ImagesLocationService {
 
     @Autowired
     private ImagesLocationDao imagesLocationDao;
-    private Map<String, String> imageAndEventMap;
 
-    @PostConstruct
-    public void loadAllImageLocations(){
-        List<ImagesLocation> imagesLocationList = imagesLocationDao.loadAll();
-        imageAndEventMap = new HashMap<String, String>();
-        for(ImagesLocation imagesLocation : imagesLocationList) {
-            imageAndEventMap.put(imagesLocation.getImagesPath(), imagesLocation.getEventName());
-        }
+    @Transactional(value = "rajavoluTransactionManager", propagation = Propagation.REQUIRED)
+    public void saveImageLocation(ImagesLocationForm imagesLocationForm) {
+        ImagesLocation imagesLocation = new ImagesLocation();
+        imagesLocation.setImagesPath(imagesLocationForm.getImagesLocation());
+        imagesLocation.setEventName(imagesLocationForm.getEventName());
+        imagesLocation.setLastUpdatedBy("Admin");
+        imagesLocation.setLastUpdated(Calendar.getInstance().getTime());
+        imagesLocationDao.create(imagesLocation);
     }
 
+
+    public List<ImagesLocationForm> loadAllImageLocations(){
+        List<ImagesLocation> imagesLocationList = imagesLocationDao.loadAll();
+        List<ImagesLocationForm> imagesLocationFormList = new ArrayList<ImagesLocationForm>();
+        for(ImagesLocation imagesLocation : imagesLocationList) {
+            ImagesLocationForm imagesLocationForm = new ImagesLocationForm();
+            imagesLocationForm.setImagesLocation(imagesLocation.getImagesPath());
+            imagesLocationForm.setEventName(imagesLocation.getEventName());
+            imagesLocationFormList.add(imagesLocationForm);
+        }
+        return imagesLocationFormList;
+    }
 }

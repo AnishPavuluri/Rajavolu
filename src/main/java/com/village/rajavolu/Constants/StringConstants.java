@@ -16,4 +16,7 @@ public class StringConstants {
             + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
 
     public static final String IMAGES_PATH = "C:\\RajavoluImages\\";
+    public static final String UNDER_SCORE = "_";
+    public static final String DOUBLE_SLASH = "\\";
+    public static final String DD_MM_YYYY_HH_MM_SS = "dd-MM-yyyy HH-mm-ss";
 }

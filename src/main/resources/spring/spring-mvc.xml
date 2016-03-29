@@ -16,7 +16,18 @@
 
     <mvc:annotation-driven />
     <bean class="org.springframework.web.servlet.view.tiles3.TilesViewResolver">
-         <property name="viewClass" value="org.springframework.web.servlet.view.tiles3.TilesView" />
+        <property name="viewClass" value="org.springframework.web.servlet.view.tiles3.TilesView" />
+        <property name="order" value="0"/>
+    </bean>
+     <bean
+        class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix">
+            <value>/WEB-INF/pages/</value>
+        </property>
+        <property name="suffix">
+            <value>.jsp</value>
+        </property>
+        <property name="order" value="1" />
     </bean>
     <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
         <property name="basename" value="validation"/>
@@ -31,13 +42,13 @@
     <mvc:resources mapping="/css/**" location="/css/" />
     <mvc:resources mapping="/images/**" location="/images/" />
     <!-- Configure the multipart resolver -->
-    <bean id="multipartResolver"
-          class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
-        <property name="maxUploadSize" value="1000000"/>
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <!--<property name="maxUploadSize" value="1000000"/>-->
+        <!--size in bytes, -1 indicates no limit-->
+        <property name="maxUploadSize" value="-1"/>
         <property name="uploadTempDir" ref="uploadDirResource"/>
     </bean>
-    <bean id="uploadDirResource"
-          class="org.springframework.core.io.FileSystemResource">
+    <bean id="uploadDirResource" class="org.springframework.core.io.FileSystemResource">
         <constructor-arg>
             <value>C:/RajavoluImages/</value>
         </constructor-arg>

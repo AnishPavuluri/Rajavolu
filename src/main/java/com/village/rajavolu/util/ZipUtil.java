@@ -1,5 +1,7 @@
 package com.village.rajavolu.util;
 
+import com.village.rajavolu.Constants.StringConstants;
+
 import java.io.*;
 import java.util.List;
 import java.util.zip.ZipEntry;
@@ -13,8 +15,6 @@ import java.util.zip.ZipInputStream;
  */
 public class ZipUtil {
 
-    private static final String OUTPUT_FOLDER = "C:\\RajavoluImages\\";
-
     /**
      * Size of the buffer to read/write data
      *      
@@ -27,8 +27,8 @@ public class ZipUtil {
      * @throws IOException
      *      
      */
-    public static void unzip(InputStream inputStream) throws IOException {
-        File destDir = new File(OUTPUT_FOLDER);
+    public static void unzip(InputStream inputStream, String dirName) throws IOException {
+        File destDir = new File(StringConstants.IMAGES_PATH+dirName);
         if (!destDir.exists()) {
             destDir.mkdir();
         }
@@ -36,7 +36,7 @@ public class ZipUtil {
         ZipEntry entry = zipIn.getNextEntry();
         // iterates over entries in the zip file
         while (entry != null) {
-            String filePath = OUTPUT_FOLDER + entry.getName();
+            String filePath = StringConstants.IMAGES_PATH + dirName + StringConstants.DOUBLE_SLASH + entry.getName();
             if (!entry.isDirectory()) {
                 // if the entry is a file, extracts it
                 extractFile(zipIn, filePath);
