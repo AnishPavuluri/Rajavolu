@@ -45,13 +45,15 @@ public class ImageUploadController {
         model.addAttribute(new UploadItem());
         List<ImagesLocationForm> imagesLocationFormList = imagesLocationService.loadAllImageLocations();
         ModelMap modelMap = new ModelMap();
-        String filePath = StringConstants.IMAGES_PATH+imagesLocationFormList.get(0).getImagesLocation();
-        File[] files = new File(filePath).listFiles();
-        modelMap.put("imagesLocationList", imagesLocationFormList);
-        modelMap.put("noOfImages", files.length);
-        modelMap.put("imagesDirectory", imagesLocationFormList.get(0).getImagesLocation());
-        request.setAttribute("noOfImages", files.length);
-        request.getSession().setAttribute("filePath",filePath);
+        if(null != imagesLocationFormList && !imagesLocationFormList.isEmpty()) {
+            String filePath = StringConstants.IMAGES_PATH + imagesLocationFormList.get(0).getImagesLocation();
+            File[] files = new File(filePath).listFiles();
+            modelMap.put("imagesLocationList", imagesLocationFormList);
+            modelMap.put("noOfImages", files.length);
+            modelMap.put("imagesDirectory", imagesLocationFormList.get(0).getImagesLocation());
+            request.setAttribute("noOfImages", files.length);
+            request.getSession().setAttribute("filePath", filePath);
+        }
         return new ModelAndView("uploadImages", modelMap);
     }
 

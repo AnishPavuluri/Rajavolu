@@ -24,9 +24,8 @@ public class RegisterFrom implements Serializable {
 
     private String confirmPassword;
 
-    @DateTimeFormat(pattern = "dd/MM/yyyy")
-    @NotNull @Past
-    private Date dateOfBirth;
+    @DateTimeFormat(pattern = "MM/dd/yyyy")
+    private String dateOfBirth;
 
     private String mobileNo;
 
@@ -90,11 +89,11 @@ public class RegisterFrom implements Serializable {
         this.emailId = emailId;
     }
 
-    public Date getDateOfBirth() {
+    public String getDateOfBirth() {
         return dateOfBirth;
     }
 
-    public void setDateOfBirth(Date dateOfBirth) {
+    public void setDateOfBirth(String dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
     }
 

@@ -8,27 +8,45 @@ select{
     margin:5px 10px 20px 35px;
 }
 input[type=text]{
-    width:137%;
+    width:71%;
     border:2px solid rgb(200, 200, 207);
     height:27px;
     padding:6px;
     border-radius:4px;
     /*margin:-2px 287px 15px 60px;*/
-    margin-top: 53px;
+    margin-top: 47px;
     margin-left: 70px;
 }
-input[type=password]{
-    width:137%;
+/*.loginDev{
+    width: 71%;
+    border: 2px solid rgb(200, 200, 207);
+    height: 27px;
+    padding: 6px;
+    border-radius: 4px;
+    margin-top: 53px;
+    margin-left: 70px;
+}*/
+input[id=forgotPwd]{
+    width:78%;
     border:2px solid rgb(200, 200, 207);
     height:27px;
     padding:6px;
     border-radius:4px;
-   /* margin:-2px 287px 15px 60px;*/
-    margin-top: 25px;
+    /*margin:-2px 287px 15px 60px;*/
+    margin-top: 93px;
+    margin-left: 25px;
+}
+input[type=password]{
+    width:71%;
+    border:2px solid rgb(200, 200, 207);
+    height:27px;
+    padding:6px;
+    border-radius:4px;
+    margin-top: 35px;
     margin-left: 70px;
 }
 input[type=submit]{
-    width:47%;
+    width:25%;
     border:0px solid rgb(200, 200, 207);
     height:37px;
     padding:0px;
@@ -38,10 +56,24 @@ input[type=submit]{
     color: #fff !important;
     font-weight:bold;
     font-size:16px;
-   /* margin:6px 133px -44px 146px;*/
     background-color: #73AD21 !important;
-    margin-top: 15px;
+    margin-top: 20px;
     margin-left: 100px;
+}
+input[id=sendId]{
+    width:35%;
+    border:0px solid rgb(200, 200, 207);
+    height:37px;
+    padding:0px;
+    line-height:20px;
+    border-radius:4px;
+    font-family:Microsoft YaHei;
+    color: #fff !important;
+    font-weight:bold;
+    font-size:16px;
+    background-color: #73AD21 !important;
+    margin-top: 31px;
+    margin-left: 121px;
 }
 label{
     margin-left:35px;
@@ -74,7 +106,7 @@ h2{
     color: white;
     font-size: 16px;
     font-family: Microsoft YaHei;
-    margin-left: -3px;
+    margin-left: 38px
 }
 .signIn{
     color:#FF7800;

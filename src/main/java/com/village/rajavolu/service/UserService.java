@@ -5,6 +5,7 @@ import com.village.rajavolu.dto.UserVO;
 import com.village.rajavolu.exception.RegisteredEmailException;
 import com.village.rajavolu.exception.RegisteredMobileException;
 
+import java.text.ParseException;
 import java.util.List;
 
 /**
@@ -24,5 +25,5 @@ public interface UserService {
 
     List<User> findByUserEmail(String emailId);
 
-    User registerUser(UserVO userVO) throws RegisteredEmailException,RegisteredMobileException;
+    User registerUser(UserVO userVO) throws RegisteredEmailException, RegisteredMobileException, ParseException;
 }

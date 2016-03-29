@@ -1,6 +1,7 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%--<%@ taglib prefix='c' uri='http://java.sun.com/jsp/jstl/core' %>--%>
 <link rel="stylesheet" type="text/css" href="css/styles.css"/>
 <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
 <link rel="stylesheet" href="css/login.css">
@@ -12,11 +13,9 @@
         $('.overlayWindow').css("display", "none");
         $('.overlay').remove();
     }
-    function forgot(){
-        alert("Hi forgot")
-        $("#emailId").css("display","none");
-        $("#password").css("display","none");
-        $("#forEmail").css("display","block");
+    function forgot() {
+        $(".loginDev").hide();
+        $("#forgotId").show();
     }
 </script>
 <body>
@@ -24,30 +23,23 @@
     <div class="overlay"></div>
     <div class="overlayWindow">
         <form:form method="POST" action="loginFrom" commandName="loginCommandName">
-            <table>
+            <div class="loginDev" id="loginDev">
                 <spring:bind path="emailId">
                     <span class="form-group ${status.error ? 'has-error' : ''}">
-                <tr>
-                    <td><form:input path="emailId" id="emailId" class="form-control" placeholder="Enter E-Mail address"/></td>
-                    <td><form:errors path="emailId" cssClass="error"/></td>
-                </tr>
+                    <form:input path="emailId" id="emailId" class="form-control" placeholder="Enter E-Mail address"/>
+                    <form:errors path="emailId" id="error" cssClass="error"/>
                     </span>
                 </spring:bind>
                 <spring:bind path="password">
                     <span class="form-group ${status.error ? 'has-error' : ''}">
-                <tr>
-                    <td><form:input path="password" id="password" type="password" class="form-control" placeholder="Enter Password"/></td>
-                    <td><form:errors path="password" cssClass="error"/></td>
-                </tr>
+                    <form:input path="password" id="password" type="password" class="form-control"
+                                placeholder="Enter Password"/>
+                    <form:errors path="password" id="error" cssClass="error"/>
                     </span>
                 </spring:bind>
-                <tr>
-                    <td><input type="submit" id="login" value="Login"/></td>
-                    <td>
-                        <a href="#" class="forgot" onclick="forgot()">forgot password?</a>
-                    </td>
-                </tr>
-            </table>
+                <input type="submit" id="login" value="Login"/>
+                <a href="forgot" class="forgot">forgot password?</a>
+            </div>
         </form:form>
         <span id="loginCloseIcon" onclick="loginOverLay()" class="btn_Close" title="Close Window" alt="close"></span>
     </div>

@@ -50,9 +50,9 @@ body {
         position: fixed;
         padding: 10.4em;
         top: -27px;
-        left: 474px;
-        width: 7%;
-        height: 37%;
+        left: 508px;
+        width: 4%;
+        height: 29%;
         z-index: 10;
         -webkit-border-radius: 7px;
         -moz-border-radius: 7px;
@@ -68,7 +68,7 @@ body {
     width:200%;
     height:23px;
     padding:20px;
-    margin:-174px 287px 14px -49px;
+    margin:-174px 287px 14px -36px;
 }
 #closeIcon{
     background: url("../images/overlay_close_button.png") no-repeat;
@@ -77,27 +77,18 @@ body {
     float: left;
     cursor: pointer;
     margin-left: 5px;
-    margin-right: 5px;
+    margin-right: 26px;
     display:inline;
     z-index:3200;
     position:absolute;
     top:-19px;
     right:-192px;
 }
-/*.error {
-    color: #ff0000;
-    opacity: 1;
-    margin-left: 271px;
-    visibility: visible;
-    -webkit-transition: opacity 0.2s , visibility 0.0s;
-    -moz-transition: opacity 0.2s , visibility 0.0s;
-    transition: opacity 0.2s , visibility 0.0s;
-}*/
 .cd-form .error {
-    color: red; font-size: 1.0em; font-weight: bold;
-    margin-right: 231px;
-    /*margin-left: 93px;*/
-    /*border: 1px solid red;*/
+    /*color: red;*/
+    /*font-size: 1.0em; */
+    font-weight: bold;
+    /*margin-right: 231px;*/
 }
 .cd-form .error.is-visible {
     opacity: 1;
@@ -107,12 +98,28 @@ body {
     transition: opacity 0.2s , visibility 0.0s;
 }
 .error {
-    color: red; font-size: 1.0em; font-weight: bold;
-    /*padding: 1.4em 1.4em 0;*/
-    /*font-size: 14px;*/
-    /*font-size: 0.875rem;*/
-    /*line-height: 1.4;*/
-    /*text-align: center;*/
+    background: #DB6D00;
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 18px;
+    min-height: 10px;
+    padding: 10px;
+    position: absolute;
+    right: -202px;
+    width: 223px;
+    border-radius: 27px;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+    text-decoration-line: 266px;
+    text-align: center;
+    text-indent: -1px;
+    padding-top: 123px;
+    padding-left: -267px;
+    margin-top: 508px;
+    margin-right: 5%;
+    margin-top: 9%;
+    padding: 5px !important;
+    font-family:"Trebuchet MS", cursive;
 }
 @media only screen and (min-width: 600px) {
     .error {

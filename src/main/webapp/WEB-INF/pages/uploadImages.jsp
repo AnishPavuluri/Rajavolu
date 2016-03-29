@@ -42,9 +42,11 @@
             </select>
         </form>
         <div id="imagesId">
+            <c:if test="${noOfImages > 0}">
             <c:forEach var="i" begin="0" end="${noOfImages-1}">
                 <img src="showImage?index=${i}" alt="Upload Image" height="250" width="250"/>
             </c:forEach>
+            </c:if>
         </div>
     </div>
 </body>

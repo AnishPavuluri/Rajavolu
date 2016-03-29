@@ -5,6 +5,9 @@ import com.village.rajavolu.dto.User;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -22,5 +25,6 @@ public class DaoTest {
         for(User user : userList){
             System.out.println("#################"+user.getEmailId() + " --- "+ user.getMobileNo());
         }*/
+
     }
 }

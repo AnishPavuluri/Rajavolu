@@ -29,4 +29,8 @@
         <put-attribute name="body" value="/WEB-INF/pages/uploadImageIndex.jsp"/>
     </definition>
 
+    <definition name="forgot" extends="base.definition">
+        <put-attribute name="body" value="/WEB-INF/pages/forgotPassword.jsp"/>
+    </definition>
+
 </tiles-definitions>

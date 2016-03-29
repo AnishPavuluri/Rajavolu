@@ -1,17 +1,22 @@
 package com.village.rajavolu.service.impl;
 
+import com.village.rajavolu.Constants.StringConstants;
 import com.village.rajavolu.dao.UserDao;
 import com.village.rajavolu.dto.User;
 import com.village.rajavolu.dto.UserVO;
 import com.village.rajavolu.exception.RegisteredEmailException;
 import com.village.rajavolu.exception.RegisteredMobileException;
 import com.village.rajavolu.service.UserService;
+import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -47,8 +52,9 @@ public class UserServiceImpl implements UserService {
     }
 
     @Transactional(value = "rajavoluTransactionManager", propagation = Propagation.REQUIRED)
-    public User registerUser(UserVO userVO) throws RegisteredEmailException , RegisteredMobileException{
+    public User registerUser(UserVO userVO) throws RegisteredEmailException, RegisteredMobileException, ParseException {
         User existingUser = null;
+        User user = new User();
         List<User> users = userDao.findByEmailOrMobileNo(userVO.getEmailId(), userVO.getMobileNo());
         if (users != null && !users.isEmpty()) {
             for (User oldUser : users) {
@@ -68,13 +74,13 @@ public class UserServiceImpl implements UserService {
                 throw new RegisteredMobileException(errorMessage);
             }
         }
-        User user = new User();
         user.setFirstName(userVO.getFirstName());
         user.setLastName(userVO.getLastName());
         user.setEmailId(userVO.getEmailId());
         user.setPassword(userVO.getPassword());
         user.setConfirmPassword(userVO.getConfirmPassword());
-        user.setDateOfBirth(userVO.getDateOfBirth());
+        SimpleDateFormat formatter = new SimpleDateFormat(StringConstants.DATE_FORMAT);
+        user.setDateOfBirth(formatter.parse(userVO.getDateOfBirth()));
         user.setMobileNo(userVO.getMobileNo());
         user.setAadharNo(userVO.getAadharNo());
         user.setPinCode(userVO.getPinCode());

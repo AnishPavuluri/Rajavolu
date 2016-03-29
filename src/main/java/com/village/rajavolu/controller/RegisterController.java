@@ -2,6 +2,7 @@ package com.village.rajavolu.controller;
 
 import com.village.rajavolu.bean.RegisterFrom;
 import com.village.rajavolu.bean.RegisterValidate;
+import com.village.rajavolu.dto.User;
 import com.village.rajavolu.dto.UserVO;
 import com.village.rajavolu.service.UserService;
 import org.apache.commons.beanutils.BeanUtils;
@@ -16,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import java.text.ParseException;
 
@@ -45,15 +47,20 @@ public class RegisterController {
     }
 
     @RequestMapping(value = "registerBean", method = RequestMethod.POST)
-    public ModelAndView newRegistration(@ModelAttribute("registerCommandName") @Valid RegisterFrom registerFrom, BindingResult bindingResult) throws ParseException {
-
+    public ModelAndView newRegistration(@ModelAttribute("registerCommandName") @Valid RegisterFrom registerFrom, BindingResult bindingResult,HttpServletRequest request) throws ParseException {
         if (bindingResult.hasErrors()) {
             return new ModelAndView("register");
         }else{
             try{
+                LOGGER.warn("-----------try block");
                 UserVO userVO = new UserVO();
-                BeanUtils.copyProperties(registerFrom,userVO);
-                userService.registerUser(userVO);
+                BeanUtils.copyProperties(userVO,registerFrom);
+                User newUser = userService.registerUser(userVO);
+                if(newUser != null ){
+                    //HttpSession session = request.getSession(true);
+                    request.setAttribute("newUser", "Registration successful...");
+                }
+
             }catch (Exception e){
                bindingResult.rejectValue("Whoops!","Whoops! error occured due to techical problem,try again.");
             }
