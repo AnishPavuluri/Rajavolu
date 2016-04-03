@@ -10,6 +10,15 @@ public class ImagesLocationForm {
 
     private String imagesLocation;
     private String eventName;
+    private String uploadedUser;
+
+    public String getUploadedUser() {
+        return uploadedUser;
+    }
+
+    public void setUploadedUser(String uploadedUser) {
+        this.uploadedUser = uploadedUser;
+    }
 
     public String getImagesLocation() {
         return imagesLocation;
@@ -26,4 +35,6 @@ public class ImagesLocationForm {
     public void setEventName(String eventName) {
         this.eventName = eventName;
     }
+
+
 }

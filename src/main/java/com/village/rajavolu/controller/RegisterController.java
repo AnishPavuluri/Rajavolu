@@ -63,6 +63,7 @@ public class RegisterController {
                     //HttpSession session = request.getSession(true);
                     mailService.sendMail(newUser.getEmailId(),null, TemplateNames.templates.getPath()+ TemplateNames.registrationMail.name(),newUser);
                     request.setAttribute("newUser", "Registration successful...");
+                    request.getSession().setAttribute("user", newUser.getEmailId());
                 }
 
             }catch (Exception e){

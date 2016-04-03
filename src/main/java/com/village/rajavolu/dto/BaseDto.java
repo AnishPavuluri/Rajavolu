@@ -61,7 +61,7 @@ public abstract class BaseDto implements Serializable {
     @PrePersist
     @PreUpdate
     public void preUpdate() {
-        lastUpdatedBy = "online@rajavolu.in";
+        //lastUpdatedBy = "online@rajavolu.in";
         lastUpdated = new Date();
     }
 }

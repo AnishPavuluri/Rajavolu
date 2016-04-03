@@ -1,6 +1,7 @@
 package com.village.rajavolu.controller;
 
 import com.village.rajavolu.Constants.StringConstants;
+import com.village.rajavolu.dto.User;
 import com.village.rajavolu.form.ImagesLocationForm;
 import com.village.rajavolu.form.UploadItem;
 import com.village.rajavolu.service.ImagesLocationService;
@@ -68,6 +69,8 @@ public class ImageUploadController {
                     inputStream = file.getInputStream();
                     ImagesLocationForm imagesLocationForm = new ImagesLocationForm();
                     imagesLocationForm.setEventName(uploadItem.getEventName());
+                    String userMailId = (String)session.getAttribute("user");
+                    imagesLocationForm.setUploadedUser(userMailId);
                     String dateInString = DateUtils.convertDateToString(Calendar.getInstance().getTime(), StringConstants.DD_MM_YYYY_HH_MM_SS);
                     imagesLocationForm.setImagesLocation(dateInString+StringConstants.DOUBLE_SLASH+StringUtils.substringBefore(file.getOriginalFilename(), String.valueOf(StringConstants.DOT)));
                     ZipUtil.unzip(inputStream, dateInString);

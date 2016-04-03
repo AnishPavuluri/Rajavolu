@@ -73,11 +73,7 @@ input[type=file] {
 .file-holder{
     color: #000;
 }
-.imagesId{
-    width:20%;
-    border:2px solid rgb(200, 200, 207);
-    height:34px;
-    padding:6px;
+#imagesId{
     margin-top: 10px;
 }
 select[id=eventSelectBoxId]{

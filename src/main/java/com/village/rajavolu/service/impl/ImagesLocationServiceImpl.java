@@ -29,7 +29,7 @@ public class ImagesLocationServiceImpl implements ImagesLocationService {
         ImagesLocation imagesLocation = new ImagesLocation();
         imagesLocation.setImagesPath(imagesLocationForm.getImagesLocation());
         imagesLocation.setEventName(imagesLocationForm.getEventName());
-        imagesLocation.setLastUpdatedBy("Admin");
+        imagesLocation.setLastUpdatedBy(imagesLocationForm.getUploadedUser());
         imagesLocation.setLastUpdated(Calendar.getInstance().getTime());
         imagesLocationDao.create(imagesLocation);
     }
