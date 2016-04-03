@@ -18,4 +18,9 @@ public class HomeController {
     public ModelAndView showContacts() {
         return new ModelAndView("home", "message", "welcome to Rajavolu");
     }
+
+    @RequestMapping( value = "/about", method = RequestMethod.GET)
+    public ModelAndView aboutPage() {
+        return new ModelAndView("about", "message", "welcome to Rajavolu");
+    }
 }

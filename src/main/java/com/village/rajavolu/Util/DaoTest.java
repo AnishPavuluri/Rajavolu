@@ -28,7 +28,7 @@ public class DaoTest {
             System.out.println("#################"+user.getEmailId() + " --- "+ user.getMobileNo());
         }*/
         MailService mailService = (MailService) context.getBean("mailService");
-        mailService.sendMail("anish.pavuluri@gmail.com", null, TemplateNames.templates.getPath()+ TemplateNames.registrationMail.name(), "HI");
+        mailService.sendMail("vsv.valluru@gmail.com", null, TemplateNames.templates.getPath()+ TemplateNames.registrationMail.name(), "HI");
         System.out.println("############ SUCCESS ##########");
 
     }

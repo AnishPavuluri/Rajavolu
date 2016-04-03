@@ -24,13 +24,11 @@
     <definition name="uploadImages" extends="base.definition">
         <put-attribute name="body" value="/WEB-INF/pages/uploadImages.jsp"/>
     </definition>
-
-    <definition name="uploadImageIndex" extends="base.definition">
-        <put-attribute name="body" value="/WEB-INF/pages/uploadImageIndex.jsp"/>
-    </definition>
-
     <definition name="forgot" extends="base.definition">
         <put-attribute name="body" value="/WEB-INF/pages/forgotPassword.jsp"/>
+    </definition>
+    <definition name="about" extends="base.definition">
+        <put-attribute name="body" value="/WEB-INF/pages/about.jsp"/>
     </definition>
 
 </tiles-definitions>

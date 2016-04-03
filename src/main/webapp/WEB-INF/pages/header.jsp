@@ -11,7 +11,6 @@
                 window.open("https://www.google.co.in/maps/dir//Rajavolu,+Andhra+Pradesh+524322/@14.5433761,78.8365066,9z/data=!4m8!4m7!1m0!1m5!1m1!1s0x3a4ca66255e43e55:0x55f2f59e7ed221ae!2m2!1d79.6055745!2d14.7187643?hl=en")
             });
         });
-
     </script>
 </head>
 <body>
@@ -22,7 +21,7 @@
     <div id="border">
         <div class="menu">
             <a href="home"><span id="home">Home</span></a>
-            <a href="#"><span id="about">About</span></a>
+            <a href="about"><span id="about">About</span></a>
             <a href="loadUploadImagesPage"><span id="uploadImage">Gallery</span></a>
             <a href="#"><span id="events">Events</span></a>
             <a href="#"><span id="map">Route Map</span></a>
@@ -40,7 +39,6 @@
             <% }%>
         </div>
     </div>
-
 </body>
 </html>
 

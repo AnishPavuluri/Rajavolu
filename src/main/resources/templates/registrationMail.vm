@@ -1,8 +1,10 @@
-Hi ${customer.firstName} ${customer.lastName}, <br/>
+Hi ${user.firstName} ${user.lastName}, <br/>
 
-You have been registered Successfully in shopping cart. Your login details are <br/>
-UserName : ${customer.emailId} <br/>
-Password : ${customer.password}
+You have been registered Successfully in Rajavolu. Your login details are :<br/>
+UserName : ${user.emailId} <br/>
+Password : ${user.password}
+
+- The Rajavolu Team
 
 
 

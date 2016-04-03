@@ -1,0 +1,102 @@
+input[id=eventNameId]{
+    width:16%;
+    border:2px solid rgb(200, 200, 207);
+    height:14px;
+    padding:9px;
+    border-radius:4px;
+    margin-top: 30px;
+    margin-left: 67px;
+}
+input[id=image]{
+    width:5%;
+    border:2px solid rgb(200, 200, 207);
+    height:3px;
+    padding:12px;
+    border-radius:15px;
+    margin-top: 37px;
+    margin-left: 7px;
+    font-size: 1px;
+}
+input[type=submit]{
+    width:34%;
+    border:0px solid rgb(200, 200, 207);
+    height:35px;
+    padding:0px;
+    line-height:20px;
+    border-radius:17px;
+    font-family:Microsoft YaHei;
+    color: #ffffff !important;
+    font-weight:bold;
+    font-size:15px;
+    background-color: Olive !important;
+    margin-top: 5px;
+    margin-left: -574px;
+}
+.eventId{
+    font-size: 16px;
+    font-family:"Trebuchet MS", cursive;
+}
+#form-control{
+     font-size: 16px;
+     font-family:"Trebuchet MS", cursive;
+ }
+.file-wrapper {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    cursor: pointer;
+}
+input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 12px;
+    filter: alpha(opacity=1);
+    opacity: 0.01;
+    margin-top: auto;
+    -moz-opacity: 0.01;
+    cursor: pointer;
+}
+.file-wrapper .button {
+    color: #fff;
+    font-size: 12px;
+    font-family: "Trebuchet MS", cursive;
+    background: #117300;
+    padding: 6px 7px;
+    margin-right: 3px;
+    border-radius: 2px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    display: inline-block;
+    font-weight: bold;
+    cursor: pointer;
+}
+.file-holder{
+    color: #000;
+}
+.imagesId{
+    width:20%;
+    border:2px solid rgb(200, 200, 207);
+    height:34px;
+    padding:6px;
+    margin-top: 10px;
+}
+select[id=eventSelectBoxId]{
+    width:20%;
+    border:2px solid rgb(200, 200, 207);
+    height:34px;
+    padding:6px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    margin-top: 15px;
+    margin-left: 7px  ;
+    margin-right: -38px;
+}
+/*about css*/
+.welId{
+    padding-bottom:8px;
+    font-size:21px;
+    font-family:cursive;
+    color:#8BC34A;
+    text-align:center;
+}

@@ -4,6 +4,8 @@ import com.village.rajavolu.bean.RegisterFrom;
 import com.village.rajavolu.bean.RegisterValidate;
 import com.village.rajavolu.dto.User;
 import com.village.rajavolu.dto.UserVO;
+import com.village.rajavolu.enums.TemplateNames;
+import com.village.rajavolu.mail.MailService;
 import com.village.rajavolu.service.UserService;
 import org.apache.commons.beanutils.BeanUtils;
 import org.apache.log4j.Logger;
@@ -35,6 +37,8 @@ public class RegisterController {
 
     @Autowired
     RegisterValidate registerValidate;
+    @Autowired
+    MailService mailService;
 
     @InitBinder
     protected void initBinder(WebDataBinder binder) {
@@ -52,12 +56,12 @@ public class RegisterController {
             return new ModelAndView("register");
         }else{
             try{
-                LOGGER.warn("-----------try block");
                 UserVO userVO = new UserVO();
                 BeanUtils.copyProperties(userVO,registerFrom);
                 User newUser = userService.registerUser(userVO);
                 if(newUser != null ){
                     //HttpSession session = request.getSession(true);
+                    mailService.sendMail(newUser.getEmailId(),null, TemplateNames.templates.getPath()+ TemplateNames.registrationMail.name(),newUser);
                     request.setAttribute("newUser", "Registration successful...");
                 }
 

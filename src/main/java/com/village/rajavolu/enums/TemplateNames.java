@@ -7,7 +7,8 @@ package com.village.rajavolu.enums;
  */
 public enum TemplateNames {
     templates("templates/"),
-    registrationMail;
+    registrationMail,
+    forgotPasswordMail;
 
     TemplateNames(String path) {
         this.path = path;
