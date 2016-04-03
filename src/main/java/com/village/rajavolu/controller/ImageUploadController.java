@@ -40,7 +40,7 @@ public class ImageUploadController {
     @Autowired
     private ImagesLocationService imagesLocationService;
 
-    @RequestMapping(value = "uploadImage" ,method = RequestMethod.GET)
+    @RequestMapping(value = "loadUploadImagesPage" ,method = {RequestMethod.GET, RequestMethod.POST})
     public ModelAndView getUploadForm(HttpServletRequest request, Model model) {
         model.addAttribute(new UploadItem());
         List<ImagesLocationForm> imagesLocationFormList = imagesLocationService.loadAllImageLocations();
@@ -52,7 +52,7 @@ public class ImageUploadController {
             modelMap.put("noOfImages", files.length);
             modelMap.put("imagesDirectory", imagesLocationFormList.get(0).getImagesLocation());
             request.setAttribute("noOfImages", files.length);
-            request.getSession().setAttribute("filePath", filePath);
+            request.setAttribute("filePath", filePath);
         }
         return new ModelAndView("uploadImages", modelMap);
     }
@@ -63,33 +63,29 @@ public class ImageUploadController {
             MultipartFile file = uploadItem.getFileData();
             LOGGER.warn("file----->" + file);
             InputStream inputStream = null;
-            if (file.getSize() > 0) {
-                inputStream = file.getInputStream();
-                ImagesLocationForm imagesLocationForm = new ImagesLocationForm();
-                imagesLocationForm.setEventName(uploadItem.getEventName());
-                String dateInString = DateUtils.convertDateToString(Calendar.getInstance().getTime(), StringConstants.DD_MM_YYYY_HH_MM_SS);
-                imagesLocationForm.setImagesLocation(dateInString+StringConstants.DOUBLE_SLASH+StringUtils.substringBefore(file.getOriginalFilename(), String.valueOf(StringConstants.DOT)));
-                ZipUtil.unzip(inputStream, dateInString);
-                imagesLocationService.saveImageLocation(imagesLocationForm);
+            if(file.getOriginalFilename().endsWith(StringConstants.DOT+StringConstants.ZIP)) {
+                if (file.getSize() > 0) {
+                    inputStream = file.getInputStream();
+                    ImagesLocationForm imagesLocationForm = new ImagesLocationForm();
+                    imagesLocationForm.setEventName(uploadItem.getEventName());
+                    String dateInString = DateUtils.convertDateToString(Calendar.getInstance().getTime(), StringConstants.DD_MM_YYYY_HH_MM_SS);
+                    imagesLocationForm.setImagesLocation(dateInString+StringConstants.DOUBLE_SLASH+StringUtils.substringBefore(file.getOriginalFilename(), String.valueOf(StringConstants.DOT)));
+                    ZipUtil.unzip(inputStream, dateInString);
+                    imagesLocationService.saveImageLocation(imagesLocationForm);
+                }
+            } else {
+                request.setAttribute("errorMessage", "Please select zip file");
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return "redirect:/uploadImageIndex";
-    }
-
-    @RequestMapping(value = "uploadImageIndex" ,method = RequestMethod.GET)
-    public String loadImage(Model model) {
-        return "redirect:/uploadImage";
+        return "forward:/loadUploadImagesPage";
     }
 
     @RequestMapping(value = "showImage" ,method = RequestMethod.GET)
-    public void showImage(HttpServletRequest request, HttpServletResponse response, HttpSession session, @RequestParam("index") int index) {
+    public void showImage(HttpServletRequest request, HttpServletResponse response, HttpSession session, @RequestParam("index") int index, @RequestParam("filePath") String filePath) {
         response.setContentType("image/jpeg, image/jpg, image/png, image/gif");
-        response.setHeader("Cache-Control", "no-store, no-cache, must-revalidate, max-age=0, post-check=0, pre-check=0");
-        response.setHeader("Pragma", "no-cache");
         try {
-            String filePath = (String)session.getAttribute("filePath");
             File[] files = new File(filePath).listFiles();
             String fileName = filePath+StringConstants.DOUBLE_SLASH+files[index].getName();
             BufferedInputStream inputStream = new BufferedInputStream(new FileInputStream(fileName));
@@ -106,6 +102,7 @@ public class ImageUploadController {
                    HttpServletResponse response) {
         String filePath = StringConstants.IMAGES_PATH+imagesDirectory;
         request.getSession().setAttribute("filePath", filePath);
+        request.setAttribute("filePath", filePath);
         File[] files = new File(filePath).listFiles();
         request.setAttribute("noOfImages", files.length);
         return new ModelAndView("imagesPage");

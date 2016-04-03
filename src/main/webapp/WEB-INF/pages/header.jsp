@@ -23,7 +23,7 @@
         <div class="menu">
             <a href="home"><span id="home">Home</span></a>
             <a href="#"><span id="about">About</span></a>
-            <a href="uploadImage"><span id="uploadImage">Gallery</span></a>
+            <a href="loadUploadImagesPage"><span id="uploadImage">Gallery</span></a>
             <a href="#"><span id="events">Events</span></a>
             <a href="#"><span id="map">Route Map</span></a>
             <%

@@ -20,4 +20,5 @@ public class StringConstants {
     public static final String DOUBLE_SLASH = "\\";
     public static final String DD_MM_YYYY_HH_MM_SS = "dd-MM-yyyy HH-mm-ss";
     public static final String DATE_FORMAT = "MM/dd/yyyy";
+    public static final String ZIP = "zip";
 }

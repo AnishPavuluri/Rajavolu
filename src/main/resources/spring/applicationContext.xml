@@ -16,7 +16,7 @@
     <context:component-scan base-package="com.village.rajavolu" />
     <context:annotation-config/>
     <context:property-placeholder location="classpath:*.properties,classpath*:*.properties" />
-    <!--<import resource="spring-mvc.xml"/>-->
+    <import resource="spring-mvc.xml"/>
     <import resource="spring-dao.xml"/>
     <import resource="spring-jpa.xml"/>
     <import resource="spring-velocity.xml"/>

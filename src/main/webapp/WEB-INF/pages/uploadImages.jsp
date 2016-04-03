@@ -15,7 +15,7 @@
 </head>
 <body>
     <div class="bodyUpload">
-        <form:form action="uploadImage.htm" modelAttribute="uploadItem" name="frm" method="post"
+        <form:form action="uploadImage" modelAttribute="uploadItem" name="frm" method="post"
                    enctype="multipart/form-data" onSubmit="return Validate();">
             <table>
                 <tr>
@@ -34,6 +34,7 @@
                 </tr>
             </table>
         </form:form>
+        <c:out value="${errorMessage}"/>
         <form id="eventsFormId" name="eventsFormId">
              <select onchange="loadImages();" id="eventSelectBoxId" name="imagesDirectory">
                 <c:forEach items="${imagesLocationList}" var="imagesLocation">
@@ -43,9 +44,7 @@
         </form>
         <div id="imagesId">
             <c:if test="${noOfImages > 0}">
-            <c:forEach var="i" begin="0" end="${noOfImages-1}">
-                <img src="showImage?index=${i}" alt="Upload Image" height="250" width="250"/>
-            </c:forEach>
+                <jsp:include page="imagesPage.jsp"/>
             </c:if>
         </div>
     </div>
