@@ -36,7 +36,7 @@
         </form:form>
         <c:out value="${errorMessage}"/>
         <form id="eventsFormId" name="eventsFormId">
-             <select onchange="loadImages();" id="eventSelectBoxId" name="imagesDirectory">
+             Select Event: <select onchange="loadImages();" id="eventSelectBoxId" name="imagesDirectory">
                 <c:forEach items="${imagesLocationList}" var="imagesLocation">
                     <option value="${imagesLocation.imagesLocation}">${imagesLocation.eventName}</option>
                 </c:forEach>

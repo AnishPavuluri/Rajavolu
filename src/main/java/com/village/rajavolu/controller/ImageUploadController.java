@@ -63,7 +63,7 @@ public class ImageUploadController {
             MultipartFile file = uploadItem.getFileData();
             LOGGER.warn("file----->" + file);
             InputStream inputStream = null;
-            if(file.getOriginalFilename().endsWith(StringConstants.DOT+StringConstants.ZIP)) {
+            if(file.getOriginalFilename().endsWith(StringConstants.DOT+StringConstants.ZIP) && StringUtils.isNotBlank(uploadItem.getEventName())) {
                 if (file.getSize() > 0) {
                     inputStream = file.getInputStream();
                     ImagesLocationForm imagesLocationForm = new ImagesLocationForm();
@@ -74,7 +74,12 @@ public class ImageUploadController {
                     imagesLocationService.saveImageLocation(imagesLocationForm);
                 }
             } else {
-                request.setAttribute("errorMessage", "Please select zip file");
+                if(!file.getOriginalFilename().endsWith(StringConstants.DOT+StringConstants.ZIP)){
+                    request.setAttribute("errorMessage", "Please select zip file");
+                }
+                if(StringUtils.isBlank(uploadItem.getEventName())) {
+                    request.setAttribute("errorMessage", "Please enter Event Name");
+                }
             }
         } catch (Exception e) {
             e.printStackTrace();
