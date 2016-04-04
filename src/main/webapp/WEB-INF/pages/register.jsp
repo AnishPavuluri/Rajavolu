@@ -17,6 +17,9 @@
 <link rel="stylesheet" href="css/calendar.css">
 <html lang="en" class="no-js">
 <script>
+    var loginController = function(){
+        window.location= "login";
+    };
     $(document).ready(function () {
         $(function () {
             $("#dob").datepicker({
@@ -25,6 +28,9 @@
                 yearRange: "1980:2016"
             });
         });
+        if($("#newUser").text().trim() != '') {
+            setTimeout(loginController, 2000);
+        }
     });
     function closeOverLay() {
         $(".registerOverlay").fadeOut("fast");
