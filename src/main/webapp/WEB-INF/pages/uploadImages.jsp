@@ -28,7 +28,7 @@
                     <input type="submit" value="Upload"/>
                 </div>
             </form:form>
-            <c:if test="${errorMessage != ''}">
+            <c:if test="${errorMessage != null}">
             <div class="uploadError">
                 <c:out value="${errorMessage}"/>
             </div>
