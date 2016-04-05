@@ -66,6 +66,7 @@ body {
     padding:0.1px;
     margin-bottom:6px;
     border-radius:9px;
+    min-height:500px;
 }
 .opo{
     background-color: white;

@@ -1,25 +1,19 @@
 package com.village.rajavolu.mail.impl;
 
+import com.village.rajavolu.Constants.StringConstants;
 import com.village.rajavolu.mail.MailService;
 import com.village.rajavolu.mail.VelocityTemplate;
-import javassist.compiler.Javac;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.Logger;
-import org.apache.velocity.app.Velocity;
-import org.apache.velocity.app.VelocityEngine;
 import org.springframework.core.io.FileSystemResource;
-import org.springframework.mail.MailSender;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;
-import org.springframework.ui.velocity.VelocityEngineUtils;
 
 import javax.annotation.Resource;
 import javax.mail.internet.MimeMessage;
 import java.io.File;
 import java.util.Calendar;
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * User: Anish
@@ -32,6 +26,7 @@ public class MailServiceImpl implements MailService {
 
     private VelocityTemplate velocityTemplate;
     private JavaMailSender mailSender;
+    static final String fromName="rajavoluvillage";
 
     public void sendMail(String toMailId, String ccMailId, String vmFileLocation, Object... data) {
         Calendar calendar = Calendar.getInstance();
@@ -40,6 +35,7 @@ public class MailServiceImpl implements MailService {
             MimeMessage mimeMessage = mailSender.createMimeMessage();
             /*use the true flag to indicate you need a multipart message*/
             MimeMessageHelper mimeMessageHelper = new MimeMessageHelper(mimeMessage, true);
+            mimeMessageHelper.setFrom(fromName, StringConstants.FROM_NAME);
             mimeMessageHelper.setTo(toMailId);
             String subject = velocityTemplate.prepareStringFromVelocityTemplate(vmFileLocation+"Subject.vm", data);
             mimeMessageHelper.setSubject(subject);

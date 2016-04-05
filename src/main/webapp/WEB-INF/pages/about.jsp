@@ -16,7 +16,6 @@
     <h4 class="txt-black" style="padding-bottom:8px;font-size:21px;margin-top:-3px;font-family:cursive;color:#8BC34A;text-align:center;"><b>Welcome To Rajavolu Village
     </b></h4>
     <h4 class="txt-orng" style="margin:1px;font-family:cursive;font-size:15px;margin-left:186px;margin-right:204px;color:#9B8651;"><b><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"For the people of the cities and town, village is a very beautiful and rejuvenating place. After living years of hectic and stressful life in the city, everybody needs to take a break to relax and rejuvenate their mind and body. One of the ideal places to relax and unwind is the village"</p></b></h4>
-
     <h4 class="txt-black" style="padding-bottom:8px;font-size:17px;font-family:cursive;color:#029688;text-align:center;"><b>HERE COMES OUR BEAUTIFUL AND FASCINATING VILLAGE 'RAJAVOLU'</b></h4>
     <h3 style="margin:1px;font-family:cursive;font-size:15px;margin-left:186px;margin-right:204px;color:#832094">
       <b>Demographic of Rajavolu:</b></h3>
@@ -47,22 +46,21 @@
           6th day <b style="color:#029688">"Ekantha Seva"</b>
         </li>
       </ul>
-      of this celebration's is the which is considered to gather attention of many people's prayers. Last time during the Vutsavam the village Rajavolu was highlighted in the Sriramanavami celebrations. The people were all happy and enjoyed the celebrations to the fullest.
+      which are considered to gather attention of many people's prayers. Last time during the Vutsavam the village Rajavolu was highlighted in the Sriramanavami celebrations. The people were all happy and enjoyed the celebrations to the fullest.
       </p>
       <p>There are nearly 500 residences in Rajavolu. The people in the village are down to earth and are  friendly. They always help each other and are never jealous about or on others life. People in Rajavolu are hard working and live like a family. There are no conflicts or political issues within the village or with other neighbour villages. The major occupation in Rajavolu is agriculture which is being performed over 1000acres land. The people remains always united for the benefit and growth of the village. <b style="color:#00BCD4;">We are very proud of our village</b>. </p>
-      <p>Telugu is the official language spoken by the people living here.  The delightful village Rajavolu is surrounded by 782 gorgeous guys and 811 beautiful females as of total 1593.  The total space occupied by rajavolu is 2324 hectares.  Rajavolu is a village panchayat located in the Nellore district of andhrapradesh.  The latitude 16.9522476 and longitude 81.8250024 are the geoco-ordinate of the Rajavolu.</p>
+      <p>Telugu is the official language spoken by the people living here. The delightful village Rajavolu is surrounded by 782 gorgeous guys and 811 beautiful females as of total 1593.  The total space occupied by rajavolu is 2324 hectares.  Rajavolu is a village panchayat located in the Nellore district of andhrapradesh.  The latitude 16.9522476 and longitude 81.8250024 are the geoco-ordinate of the Rajavolu.</p>
       </h2>
         <h3 style="margin:1px;font-family:cursive;font-size:15px;margin-left:186px;margin-right:204px;color:#832094">
-          <b>Our info:</b></h3>
+          <b>Our village is also consists of:</b></h3>
 
     <h1 style="margin:1px;font-family:cursive;font-size:15px;margin-left:186px;margin-right:204px;">
       <ul>
         <li>
-          <p>&nbsp;&nbsp;There is one M.P.U.P School.In that school available classes upto 1st standard to 8th
-            class.</p>
+          <p>&nbsp;&nbsp;M.P.U.P School. where students can be educated from 1st standard to 8th standard.</p>
         </li>
         <li>
-          <p>&nbsp;&nbsp;There is one Veterinary Hospital.</p>
+          <p>&nbsp;&nbsp;Our village is also provided with one Veterinary Hospital.</p>
         </li>
       </ul>
     </h1>
@@ -80,7 +78,7 @@
           <b>&nbsp;&nbsp;&nbsp;&nbsp;By Train:</b></h2>
         <h1 style="margin:1px;font-family:cursive;font-size:15px;margin-left:186px;margin-right:204px;">
           <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;There is no railway station situated less than 10km.  However, there are railway stations nearer(Nellore and Kavali). You can reach out to the village by bus after these two stations.</p></h1>
-        <h4 class="txt-black" style="padding-bottom:8px;font-size:17px;font-family:cursive;color:#029688;text-align:center;"><b>"Finally villages are the "tough" among cities, a spectacle for the nation".</b></h4>
+        <h4 class="txt-black" style="padding-bottom:8px;font-size:17px;font-family:cursive;color:#029688;text-align:center;"><b>Finally villages are the tough among cities, a spectacle for the nation</b></h4>
   <%--</div>--%>
 </div>
 </body>

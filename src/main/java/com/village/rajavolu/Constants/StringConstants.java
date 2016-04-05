@@ -21,4 +21,5 @@ public class StringConstants {
     public static final String DD_MM_YYYY_HH_MM_SS = "dd-MM-yyyy HH-mm-ss";
     public static final String DATE_FORMAT = "MM/dd/yyyy";
     public static final String ZIP = "zip";
+    public static final String FROM_NAME = "Rajavolu Village";
 }

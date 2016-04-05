@@ -28,7 +28,11 @@
                     <input type="submit" value="Upload"/>
                 </div>
             </form:form>
-            <c:out value="${errorMessage}"/>
+            <c:if test="${errorMessage != ''}">
+            <div class="uploadError">
+                <c:out value="${errorMessage}"/>
+            </div>
+            </c:if>
         </c:if>
         <form id="eventsFormId" name="eventsFormId">
             <span style="color:#FF7800;font-weight:bold;font-size:16px;margin-left:115px;font-family:Microsoft YaHei">Select Event:</span>

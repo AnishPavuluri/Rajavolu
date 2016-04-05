@@ -1,11 +1,14 @@
-Hi ${user.firstName} ${user.lastName}, <br/>
-
-You have been registered Successfully in Rajavolu. Your login details are :<br/>
-UserName : ${user.emailId} <br/>
-Password : ${user.password}
-
-- The Rajavolu Team
-
-
-
-
+<html>
+<body>
+<p style="margin:9px;font-family:Trebuchet MS;font-size:14px;margin-left:17px;margin-right:204px;">
+    Hi,<b>${user.firstName}</b>
+    <br/><br/>
+    &nbsp;&nbsp;Welcome to the Rajavolu Village!<br/><br/>
+    &nbsp;&nbsp;Your registration on Rajavolu was completed successfully. Your login details are :<br/>
+    &nbsp;&nbsp;User Name : ${user.emailId}<br/>
+    &nbsp;&nbsp;Password  : ${user.password}<br/><br/>
+    <b>-The Rajavolu Team.</b>
+</p>
+</body>
+</html>
+	
