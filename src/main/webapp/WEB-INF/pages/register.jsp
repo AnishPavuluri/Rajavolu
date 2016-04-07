@@ -28,8 +28,11 @@
                 yearRange: "1980:2016"
             });
         });
-        if($("#newUser").text().trim() != '') {
-            setTimeout(loginController, 2000);
+        if ($("#newUser").text().trim() != '') {
+            $(function () {
+                $(".registerOverlayWindow").fadeOut("fast");
+            });
+            setTimeout(loginController, 3000);
         }
     });
     function closeOverLay() {
@@ -41,7 +44,19 @@
 </script>
 <body>
 <div class="bg">
-    <div class="registerOverlay"></div>
+    <div class="registerOverlay">
+        <%
+            Object newUser = request.getAttribute("newUser");
+            Object userName = request.getAttribute("userName");
+            if (newUser != null) {
+        %>
+        <div id="newUser">
+            <span style="color:green">
+                <%=userName%>,&nbsp;<%=newUser%>
+            </span>
+        </div>
+        <% }%>
+    </div>
     <div id="login-box" class="registerOverlayWindow">
         <div class="registerheaderOverlay">
             <span style="color:#FF7800;font-weight:bold;font-size:1.3rem;margin-left:-36px;font-family:Microsoft YaHei"> Register Now </span>
@@ -103,14 +118,6 @@
                     </span>
             </spring:bind>
             <input type="submit" value="submit"/>
-            <%
-                Object newUser = request.getAttribute("newUser");
-                if (newUser != null) {
-
-            %>
-            <div id="newUser" style="color:green"><%=newUser%>
-            </div>
-            <% }%>
         </form:form>
         <span id="closeIcon" onclick="closeOverLay()" class="btn_Close" title="Close Window" alt="close"></span>
     </div>
