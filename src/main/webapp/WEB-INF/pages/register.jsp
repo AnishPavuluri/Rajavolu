@@ -10,10 +10,11 @@
 <%@ taglib prefix="core" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <link rel="stylesheet" type="text/css" href="css/styles.css"/>
-<script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
-<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
-<script src="http://code.jquery.com/ui/1.11.0/jquery-ui.js"></script>
-<link rel="stylesheet" href="http://code.jquery.com/ui/1.11.0/themes/smoothness/jquery-ui.css">
+<spring:url value="js/jquery-2.1.1.min.js" var="mainJs" />
+<spring:url value="js/jquery-1.10.2.js" var="mainJs" />
+<spring:url value="js/jquery-1.10.2.js" var="mainJs" />
+<spring:url value="js/jquery-ui.js" var="mainJs" />
+<link rel="stylesheet" href="css/jquery-ui.css">
 <link rel="stylesheet" href="css/calendar.css">
 <html lang="en" class="no-js">
 <script>

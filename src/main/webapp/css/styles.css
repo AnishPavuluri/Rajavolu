@@ -107,7 +107,8 @@ body {
     padding: 10px;
     position: absolute;
     right: -202px;
-    width: 223px;
+    min-width:223px;
+    width: auto;
     border-radius: 27px;
     box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
     text-decoration-line: 266px;

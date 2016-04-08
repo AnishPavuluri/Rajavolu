@@ -42,8 +42,8 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public List<User> findByUserEmailAndPassword(String emailId, String password){
-        return userDao.findByUserEmailAndPassword(emailId,password);
+    public List<User> findByUserMobileNo(String mobileNo){
+        return userDao.findByUserMobileNo(mobileNo);
     }
 
     @Override

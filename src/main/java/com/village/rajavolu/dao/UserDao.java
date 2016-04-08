@@ -14,7 +14,7 @@ public interface UserDao extends GenericDao<User, Long > {
 
     List<User> findByEmailOrMobileNo(String name,String mobile);
 
-    List<User> findByUserEmailAndPassword(String emailId, String password);
+    List<User> findByUserMobileNo(String mobileNo);
 
     List<User> findByUserEmail(String emailId);
 

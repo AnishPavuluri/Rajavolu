@@ -1,9 +1,9 @@
-<!DOCTYPE HTML>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <html>
 <link>
 <meta charset="utf-8">
 <link rel="stylesheet" type="text/css" href="css/style.css"/>
-<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+<spring:url value="js/jquery-1.10.2.js" var="mainJs" />
 <head>
     <script>
         $(document).ready(function() {

@@ -16,7 +16,7 @@ import javax.servlet.http.HttpSession;
 import java.util.List;
 
 /**
- *
+ * This validator class to validate the login functionality.
  * Created by Srinivas.V on 31/12/2015.
  */
 @Component
@@ -31,14 +31,24 @@ public class LoginValidator implements Validator {
         return LoginFrom.class == clazz;
     }
 
+    /**
+     * This validate method to handle the login validations.
+     * @param target
+     * @param errors
+     */
     @Override
     public void validate(Object target, Errors errors) {
         LoginFrom loginFrom = (LoginFrom) target;
+        List<User> user;
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "emailId", "NotEmpty.loginFrom.emailId");
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "password", "NotEmpty.loginFrom.password");
 
         if (!errors.hasErrors()) {
-            List<User> user = userService.findByUserEmail(loginFrom.getEmailId());
+            if (loginFrom.getEmailId().matches("[7-9][0-9]{9}") && loginFrom.getEmailId().matches("\\d+")) {
+                user = userService.findByUserMobileNo(loginFrom.getEmailId());
+            } else {
+                user = userService.findByUserEmail(loginFrom.getEmailId());
+            }
             if (user.isEmpty()) {
                 errors.rejectValue("password", "NotMatch.loginFrom.email");
             } else {
@@ -46,7 +56,7 @@ public class LoginValidator implements Validator {
                 HttpServletRequest request = requestAttributes.getRequest();
                 for (User users : user) {
                     if (users.getEmailId().equalsIgnoreCase(loginFrom.getEmailId()) ||
-                            users.getMobileNo().equalsIgnoreCase(loginFrom.getMobileNo())) {
+                            users.getMobileNo().equalsIgnoreCase(loginFrom.getEmailId())) {
                         if (!users.getPassword().equals(loginFrom.getPassword())) {
                             errors.rejectValue("password", "NotSame.loginFrom.password");
                         }

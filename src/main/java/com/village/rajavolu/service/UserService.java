@@ -21,7 +21,7 @@ public interface UserService {
 
     List<User> findByUserEmailOrMobile(String userName,String mobileNumber);
 
-    List<User> findByUserEmailAndPassword(String emailId, String password);
+    List<User> findByUserMobileNo(String mobileNo);
 
     List<User> findByUserEmail(String emailId);
 

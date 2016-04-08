@@ -2,7 +2,7 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <link rel="stylesheet" type="text/css" href="css/styles.css"/>
-<script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+<spring:url value="js/jquery-2.1.1.min.js" var="mainJs" />
 <link rel="stylesheet" href="css/login.css">
 <html lang="en" class="no-js">
 <script>
@@ -11,10 +11,6 @@
         $(".overlayWindow").fadeOut("fast");
         $('.overlayWindow').css("display", "none");
         $('.overlay').remove();
-    }
-    function forgot() {
-        $(".loginDev").hide();
-        $("#forgotId").show();
     }
 </script>
 <body>
@@ -25,7 +21,7 @@
             <div class="loginDev" id="loginDev">
                 <spring:bind path="emailId">
                     <span class="form-group ${status.error ? 'has-error' : ''}">
-                    <form:input path="emailId" id="emailId" class="form-control" placeholder="Enter E-Mail address"/>
+                    <form:input path="emailId" id="emailId" class="form-control" placeholder="Enter E-Mail/Mobile No"/>
                     <form:errors path="emailId" id="error" cssClass="error"/>
                     </span>
                 </spring:bind>

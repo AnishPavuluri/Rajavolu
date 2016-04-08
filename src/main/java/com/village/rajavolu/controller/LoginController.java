@@ -18,7 +18,7 @@ import javax.validation.Valid;
 import java.text.ParseException;
 
 /**
- *
+ * This Controller class to handle the login request.
  * Created by Srinivas.V on 15/11/2015.
  */
 
@@ -28,16 +28,32 @@ public class LoginController {
     @Autowired
     LoginValidator loginValidator;
 
+    /**
+     * This method to bind the properties
+     * @param binder
+     */
     @InitBinder
-    protected void initBin0der(WebDataBinder binder) {
+    protected void initBinder(WebDataBinder binder) {
         binder.setValidator(loginValidator);
     }
 
+    /**
+     * This method
+     * @return
+     */
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public ModelAndView viewLogin() {
         return new ModelAndView("login", "loginCommandName", new LoginFrom());
     }
 
+    /**
+     * This method handle the user login request
+     * @param loginFrom
+     * @param bindingResult
+     * @param request
+     * @return
+     * @throws ParseException
+     */
     @RequestMapping(value = "loginFrom", method = RequestMethod.POST)
     public ModelAndView newLoginPage(@ModelAttribute("loginCommandName") @Valid LoginFrom loginFrom, BindingResult bindingResult,HttpServletRequest request) throws ParseException {
 
@@ -51,18 +67,14 @@ public class LoginController {
         }
     }
 
+    /**
+     * This method handle logout functionality
+     * @param session
+     * @return
+     */
     @RequestMapping(value = "/logout",method = RequestMethod.GET)
     public String logOut(HttpSession session){
         session.invalidate();
         return "redirect:/home";
     }
-
-    /*@RequestMapping(value = "/forgotId",method = RequestMethod.GET,params = {"argName"})
-    public ModelAndView forgotPassword(@ModelAttribute("loginCommandName") @Valid LoginFrom loginFrom, BindingResult bindingResult, HttpServletRequest request){
-        if(bindingResult.hasErrors()){
-            return new ModelAndView("forgotId");
-        }else {
-            return new ModelAndView("login");
-        }
-    }*/
 }
