@@ -2,7 +2,7 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <link rel="stylesheet" type="text/css" href="css/styles.css"/>
-<spring:url value="js/jquery-2.1.1.min.js" var="mainJs" />
+<script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
 <link rel="stylesheet" href="css/login.css">
 <html lang="en" class="no-js">
 <script>

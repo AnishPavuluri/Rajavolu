@@ -3,7 +3,7 @@
 <link>
 <meta charset="utf-8">
 <link rel="stylesheet" type="text/css" href="css/style.css"/>
-<spring:url value="js/jquery-1.10.2.js" var="mainJs" />
+<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
 <head>
     <script>
         $(document).ready(function() {
